@@ -1,4 +1,4 @@
-package org.draken.usagi.core.native
+package org.draken.usagi.core.nativeio
 
 import dagger.Reusable
 import java.io.File
