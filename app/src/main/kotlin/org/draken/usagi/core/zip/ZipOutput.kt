@@ -16,7 +16,11 @@ import java.util.zip.ZipOutputStream
 
 class ZipOutput(
 	val file: File,
+<<<<<<< HEAD
 	private val compressionLevel: Int = Deflater.DEFAULT_COMPRESSION,
+=======
+	private val compressionLevel: Int = Deflater.NO_COMPRESSION,
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 ) : Closeable {
 
 	private val entryNames = ArraySet<String>()
@@ -108,7 +112,11 @@ class ZipOutput(
 				val zipEntry = ZipEntry(name)
 				putNextEntry(zipEntry)
 				try {
+<<<<<<< HEAD
 					fis.copyTo(this)
+=======
+					fis.copyTo(this, COPY_BUFFER_SIZE)
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 				} finally {
 					closeEntry()
 				}
@@ -136,9 +144,15 @@ class ZipOutput(
 	private fun <T> withOutput(block: (ZipOutputStream) -> T): T {
 		return try {
 			(cachedOutput ?: newOutput(append)).withOutputImpl(block).also {
+<<<<<<< HEAD
 				append = true // after 1st success write
 			}
 		} catch (e: NullPointerException) { // probably NullPointerException: Deflater has been closed
+=======
+				append = true
+			}
+		} catch (e: NullPointerException) {
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 			e.printStackTraceDebug()
 			newOutput(append).withOutputImpl(block)
 		}
@@ -160,8 +174,19 @@ class ZipOutput(
 		try {
 			close()
 		} catch (e: NullPointerException) {
+<<<<<<< HEAD
 			// Don't throw the "Deflater has been closed" exception
 			e.printStackTraceDebug()
 		}
 	}
 }
+=======
+			e.printStackTraceDebug()
+		}
+	}
+
+	companion object {
+		private const val COPY_BUFFER_SIZE = 8192
+	}
+}
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6

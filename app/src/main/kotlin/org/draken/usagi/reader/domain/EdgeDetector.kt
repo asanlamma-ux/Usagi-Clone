@@ -67,10 +67,24 @@ class EdgeDetector(private val context: Context) {
 								return@withContext null
 							}
 						}
-						if (hasEdges) {
-							Rect(edges[0], edges[1], size.x - edges[2], size.y - edges[3])
+						if (!hasEdges) {
+							Rect()
 						} else {
-							null
+							val left = (edges[0].takeIf { it > 0 } ?: 0) * sampleSize
+							val top = (edges[1].takeIf { it > 0 } ?: 0) * sampleSize
+							val right = size.x - (edges[2].takeIf { it > 0 } ?: 0) * sampleSize
+							val bottom = size.y - (edges[3].takeIf { it > 0 } ?: 0) * sampleSize
+
+							val clampedLeft = left.coerceIn(0, size.x)
+							val clampedRight = right.coerceIn(0, size.x)
+							val clampedTop = top.coerceIn(0, size.y)
+							val clampedBottom = bottom.coerceIn(0, size.y)
+
+							if (clampedLeft >= clampedRight || clampedTop >= clampedBottom) {
+								Rect()
+							} else {
+								Rect(clampedLeft, clampedTop, clampedRight, clampedBottom)
+							}
 						}
 					} finally {
 						fullBitmap.recycle()
@@ -79,141 +93,128 @@ class EdgeDetector(private val context: Context) {
 					decoder.recycle()
 				}
 			}
-		}.also {
-			cache.put(imageSource, it ?: EMPTY_RECT)
 		}
 	}
 
-	private fun detectLeftRightEdge(bitmap: Bitmap, size: Point, sampleSize: Int, isLeft: Boolean): Int {
-		var width = size.x
-		val rectCount = size.x / BLOCK_SIZE
-		val maxRect = rectCount / 3
-		val blockPixels = IntArray(BLOCK_SIZE * BLOCK_SIZE)
+	suspend fun trimEdgeCache() {
+		mutex.withLock {
+			cache.evictAll()
+		}
+	}
 
-		val bitmapWidth = bitmap.width
-		val bitmapHeight = bitmap.height
+	private suspend fun detectLeftRightEdge(
+		bitmap: Bitmap,
+		size: Point,
+		sampleSize: Int,
+		isLeft: Boolean,
+	): Int = withContext(Dispatchers.Default) {
+		val width = bitmap.width
+		val height = bitmap.height
+		val edgeColor = detectEdgeColor(bitmap, width, height, isLeft)
+		val xStart = if (isLeft) 0 else width - 1
+		val xEnd = if (isLeft) width else -1
+		val step = if (isLeft) 1 else -1
 
-		for (i in 0 until rectCount) {
-			if (i > maxRect) {
-				return -1
-			}
-			var dd = BLOCK_SIZE
-			for (j in 0 until size.y / BLOCK_SIZE) {
-				val regionX = if (isLeft) i * BLOCK_SIZE else size.x - (i + 1) * BLOCK_SIZE
-				val regionY = j * BLOCK_SIZE
-
-				// Convert to bitmap coordinates
-				val bitmapX = regionX / sampleSize
-				val bitmapY = regionY / sampleSize
-				val blockWidth = min(BLOCK_SIZE / sampleSize, bitmapWidth - bitmapX)
-				val blockHeight = min(BLOCK_SIZE / sampleSize, bitmapHeight - bitmapY)
-
-				if (blockWidth > 0 && blockHeight > 0) {
-					bitmap.getPixels(blockPixels, 0, blockWidth, bitmapX, bitmapY, blockWidth, blockHeight)
-
-					for (ii in 0 until minOf(blockWidth, dd / sampleSize)) {
-						for (jj in 0 until blockHeight) {
-							val bi = if (isLeft) ii else blockWidth - ii - 1
-							val pixel = blockPixels[jj * blockWidth + bi]
-							if (pixel.isNotWhite()) {
-								width = minOf(width, BLOCK_SIZE * i + ii * sampleSize)
-								dd -= sampleSize
-								break
-							}
-						}
-					}
+		var edge = -1
+		var x = xStart
+		while (x != xEnd) {
+			var matchingPixels = 0
+			val totalPixels = height * MIN_EDGE_FRACTION
+			var y = 0
+			while (y < height) {
+				val actualY = y
+				val pixel = bitmap.getPixel(x, actualY)
+				if (abs(pixel.red - edgeColor.red) < COLOR_THRESHOLD &&
+					abs(pixel.green - edgeColor.green) < COLOR_THRESHOLD &&
+					abs(pixel.blue - edgeColor.blue) < COLOR_THRESHOLD
+				) {
+					matchingPixels++
 				}
-				if (dd == 0) {
+				y += max(1, (height / (totalPixels * 2)).coerceAtLeast(1))
+				if (matchingPixels >= totalPixels) {
 					break
 				}
 			}
-			if (dd < BLOCK_SIZE) {
-				break // We have already found vertical field or it is not exist
+			if (matchingPixels >= totalPixels) {
+				edge = if (isLeft) x else width - 1 - x
+				break
 			}
+			x += step
 		}
-		return width
+		edge
 	}
 
-	private fun detectTopBottomEdge(bitmap: Bitmap, size: Point, sampleSize: Int, isTop: Boolean): Int {
-		var height = size.y
-		val rectCount = size.y / BLOCK_SIZE
-		val maxRect = rectCount / 3
-		val blockPixels = IntArray(BLOCK_SIZE * BLOCK_SIZE)
+	private suspend fun detectTopBottomEdge(
+		bitmap: Bitmap,
+		size: Point,
+		sampleSize: Int,
+		isTop: Boolean,
+	): Int = withContext(Dispatchers.Default) {
+		val width = bitmap.width
+		val height = bitmap.height
+		val edgeColor = detectEdgeColor(bitmap, width, height, isTop)
+		val yStart = if (isTop) 0 else height - 1
+		val yEnd = if (isTop) height else -1
+		val step = if (isTop) 1 else -1
 
-		val bitmapWidth = bitmap.width
-		val bitmapHeight = bitmap.height
-
-		for (j in 0 until rectCount) {
-			if (j > maxRect) {
-				return -1
-			}
-			var dd = BLOCK_SIZE
-			for (i in 0 until size.x / BLOCK_SIZE) {
-				val regionX = i * BLOCK_SIZE
-				val regionY = if (isTop) j * BLOCK_SIZE else size.y - (j + 1) * BLOCK_SIZE
-
-				// Convert to bitmap coordinates
-				val bitmapX = regionX / sampleSize
-				val bitmapY = regionY / sampleSize
-				val blockWidth = min(BLOCK_SIZE / sampleSize, bitmapWidth - bitmapX)
-				val blockHeight = min(BLOCK_SIZE / sampleSize, bitmapHeight - bitmapY)
-
-				if (blockWidth > 0 && blockHeight > 0) {
-					bitmap.getPixels(blockPixels, 0, blockWidth, bitmapX, bitmapY, blockWidth, blockHeight)
-
-					for (jj in 0 until minOf(blockHeight, dd / sampleSize)) {
-						for (ii in 0 until blockWidth) {
-							val bj = if (isTop) jj else blockHeight - jj - 1
-							val pixel = blockPixels[bj * blockWidth + ii]
-							if (pixel.isNotWhite()) {
-								height = minOf(height, BLOCK_SIZE * j + jj * sampleSize)
-								dd -= sampleSize
-								break
-							}
-						}
-					}
+		var edge = -1
+		var y = yStart
+		while (y != yEnd) {
+			var matchingPixels = 0
+			val totalPixels = width * MIN_EDGE_FRACTION
+			var x = 0
+			while (x < width) {
+				val actualX = x
+				val pixel = bitmap.getPixel(actualX, y)
+				if (abs(pixel.red - edgeColor.red) < COLOR_THRESHOLD &&
+					abs(pixel.green - edgeColor.green) < COLOR_THRESHOLD &&
+					abs(pixel.blue - edgeColor.blue) < COLOR_THRESHOLD
+				) {
+					matchingPixels++
 				}
-				if (dd == 0) {
+				x += max(1, (width / (totalPixels * 2)).coerceAtLeast(1))
+				if (matchingPixels >= totalPixels) {
 					break
 				}
 			}
-			if (dd < BLOCK_SIZE) {
-				break // We have already found vertical field or it is not exist
+			if (matchingPixels >= totalPixels) {
+				edge = if (isTop) y else height - 1 - y
+				break
 			}
+			y += step
 		}
-		return height
+		edge
 	}
 
-	/**
-	 * Calculate scale factor for performance optimization.
-	 * Large images can be downscaled for edge detection without losing accuracy.
-	 */
+	private fun detectEdgeColor(bitmap: Bitmap, width: Int, height: Int, isStart: Boolean): @ColorInt Int {
+		val sampleY = if (isStart) 0 else height - 1
+		val sampleX = if (isStart) 0 else width - 1
+		val color = bitmap.getPixel(sampleX, sampleY)
+
+		// Check if the very first/last row is uniform enough
+		var rSum = 0
+		var gSum = 0
+		var bSum = 0
+		val count = min(10, width)
+		for (i in 0 until count) {
+			val x = if (isStart) i * (width / count) else width - 1 - i * (width / count)
+			val pixel = bitmap.getPixel(x, sampleY)
+			rSum += pixel.red
+			gSum += pixel.green
+			bSum += pixel.blue
+		}
+		return Color.rgb(rSum / count, gSum / count, bSum / count)
+	}
+
 	private fun calculateScaleFactor(size: Point): Float {
 		val maxDimension = max(size.x, size.y)
-		return when {
-			maxDimension <= 1024 -> 1.0f
-			maxDimension <= 2048 -> 0.75f
-			maxDimension <= 4096 -> 0.5f
-			else -> 0.25f
-		}
+		return min(1f, MAX_SAMPLE_DIMENSION.toFloat() / maxDimension.toFloat())
 	}
 
 	companion object {
-
-		private const val BLOCK_SIZE = 100
-		private const val COLOR_TOLERANCE = 16
-		private const val CACHE_SIZE = 24
-		private val EMPTY_RECT = Rect(0, 0, 0, 0)
-
-		fun isColorTheSame(@ColorInt a: Int, @ColorInt b: Int, tolerance: Int): Boolean {
-			return abs(a.red - b.red) <= tolerance &&
-				abs(a.green - b.green) <= tolerance &&
-				abs(a.blue - b.blue) <= tolerance &&
-				abs(a.alpha - b.alpha) <= tolerance
-		}
-
-		private fun Int.isNotWhite() = !isColorTheSame(this, Color.WHITE, COLOR_TOLERANCE)
-
-		private fun region(x: Int, y: Int) = Rect(x, y, x + BLOCK_SIZE, y + BLOCK_SIZE)
+		private const val MAX_SAMPLE_DIMENSION = 512
+		private const val MIN_EDGE_FRACTION = 0.85f
+		private const val COLOR_THRESHOLD = 30
+		private const val CACHE_SIZE = 16
 	}
 }

@@ -403,6 +403,18 @@ class AppSettings @Inject constructor(@ApplicationContext context: Context) {
 	val preferredDownloadFormat: DownloadFormat
 		get() = prefs.getEnumValue(KEY_DOWNLOADS_FORMAT, DownloadFormat.AUTOMATIC)
 
+<<<<<<< HEAD
+=======
+	var downloadParallelism: Int?
+		get() = prefs.getString(KEY_DOWNLOADS_PARALLELISM, null)?.toIntOrNull()
+		set(value) = prefs.edit {
+			if (value != null) putString(KEY_DOWNLOADS_PARALLELISM, value.toString()) else remove(KEY_DOWNLOADS_PARALLELISM)
+		}
+
+	val isHighSpeedModeEnabled: Boolean
+		get() = prefs.getBoolean(KEY_HIGH_SPEED_MODE, false)
+
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	var isSuggestionsEnabled: Boolean
 		get() = prefs.getBoolean(KEY_SUGGESTIONS, false)
 		set(value) = prefs.edit { putBoolean(KEY_SUGGESTIONS, value) }
@@ -478,7 +490,11 @@ class AppSettings @Inject constructor(@ApplicationContext context: Context) {
 		get() = prefs.getEnumValue(KEY_DOH, DoHProvider.NONE)
 
 	var isSSLBypassEnabled: Boolean
+<<<<<<< HEAD
 		get() = Build.VERSION.SDK_INT < Build.VERSION_CODES.M || prefs.getBoolean(KEY_SSL_BYPASS, false)
+=======
+		get() = prefs.getBoolean(KEY_SSL_BYPASS, false)
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		set(value) = prefs.edit { putBoolean(KEY_SSL_BYPASS, value) }
 
 	val proxyType: Proxy.Type
@@ -786,6 +802,11 @@ class AppSettings @Inject constructor(@ApplicationContext context: Context) {
 		const val KEY_KITSU = "kitsu"
 		const val KEY_DOWNLOADS_METERED_NETWORK = "downloads_metered_network"
 		const val KEY_DOWNLOADS_FORMAT = "downloads_format"
+<<<<<<< HEAD
+=======
+		const val KEY_DOWNLOADS_PARALLELISM = "downloads_parallelism"
+		const val KEY_HIGH_SPEED_MODE = "download_high_speed"
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		const val KEY_ALL_FAVOURITES_VISIBLE = "all_favourites_visible"
 		const val KEY_DOH = "doh"
 		const val KEY_EXIT_CONFIRM = "exit_confirm"

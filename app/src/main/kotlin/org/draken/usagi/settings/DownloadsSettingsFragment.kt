@@ -59,6 +59,12 @@ class DownloadsSettingsFragment :
 			entryValues = TriStateOption.entries.names()
 			setDefaultValueCompat(TriStateOption.ASK.name)
 		}
+<<<<<<< HEAD
+=======
+		findPreference<ListPreference>(AppSettings.KEY_DOWNLOADS_PARALLELISM).also {
+			it?.isEnabled = !settings.isHighSpeedModeEnabled
+		}
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		dozeHelper.updatePreference()
 	}
 

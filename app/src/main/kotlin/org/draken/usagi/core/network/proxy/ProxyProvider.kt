@@ -76,7 +76,11 @@ class ProxyProvider @Inject constructor(
 			} else {
 				val url = if (isBypassEnabled()) {
 					val port = bypassProxyServer.ensureStarted()
+<<<<<<< HEAD
 					"http://localhost:$port"
+=======
+					"http://127.0.0.1:$port"
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 				} else {
 					bypassProxyServer.stopIfRunning()
 					buildString {
@@ -119,7 +123,11 @@ class ProxyProvider @Inject constructor(
 	private fun getProxy(): Proxy {
 		if (isBypassEnabled()) {
 			val port = bypassProxyServer.ensureStarted()
+<<<<<<< HEAD
 			return Proxy(Proxy.Type.HTTP, InetSocketAddress("localhost", port))
+=======
+			return Proxy(Proxy.Type.HTTP, InetSocketAddress("127.0.0.1", port))
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		}
 		bypassProxyServer.stopIfRunning()
 		val type = settings.proxyType

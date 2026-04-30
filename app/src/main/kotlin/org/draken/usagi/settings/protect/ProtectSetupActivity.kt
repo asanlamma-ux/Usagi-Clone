@@ -1,7 +1,10 @@
 package org.draken.usagi.settings.protect
 
 import android.content.pm.PackageManager
+<<<<<<< HEAD
 import android.os.Build
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.os.Bundle
 import android.text.Editable
 import android.view.KeyEvent
@@ -115,7 +118,11 @@ class ProtectSetupActivity :
 	}
 
 	private fun isBiometricAvailable(): Boolean {
+<<<<<<< HEAD
 		return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
 			packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
+=======
+		return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	}
 }

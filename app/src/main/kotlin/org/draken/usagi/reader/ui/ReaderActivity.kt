@@ -4,7 +4,10 @@ import android.app.assist.AssistContent
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
+<<<<<<< HEAD
 import android.os.Build
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.os.Bundle
 import android.view.Gravity
 import android.view.KeyEvent
@@ -227,10 +230,15 @@ class ReaderActivity :
     }
 
     override fun onProvideAssistContent(outContent: AssistContent) {
+<<<<<<< HEAD
 		super.onProvideAssistContent(outContent)
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
 		}
+=======
+        super.onProvideAssistContent(outContent)
+        viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
     }
 
     override fun isNsfwContent(): Flow<Boolean> = viewModel.isMangaNsfw

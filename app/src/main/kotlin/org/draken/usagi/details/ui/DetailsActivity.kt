@@ -7,7 +7,10 @@ import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.InsetDrawable
 import android.graphics.drawable.RippleDrawable
+<<<<<<< HEAD
 import android.os.Build
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.os.Bundle
 import android.text.SpannedString
 import android.view.Gravity
@@ -29,7 +32,10 @@ import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.core.view.updatePaddingRelative
+<<<<<<< HEAD
 import androidx.core.widget.NestedScrollView
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.transition.TransitionManager
 import coil3.ImageLoader
@@ -165,6 +171,7 @@ class DetailsActivity :
 			lifecycle = this,
 			settings = settings,
 		)
+<<<<<<< HEAD
 		viewBinding.scrollView.setOnScrollChangeListener(
 			NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
 				if (settings.isBackdropEnabled) {
@@ -180,6 +187,21 @@ class DetailsActivity :
 				supportActionBar?.setDisplayShowTitleEnabled(titleBottom < appBarBottom)
 			},
 		)
+=======
+		viewBinding.scrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+			if (settings.isBackdropEnabled) {
+				viewBinding.backdropContainer.translationY = -scrollY.toFloat()
+			}
+			updateAppBarScrim(scrollY)
+			val titleView = viewBinding.textViewTitle
+			val loc = IntArray(2)
+			titleView.getLocationOnScreen(loc)
+			val titleBottom = loc[1] + titleView.height
+			viewBinding.appbar.getLocationOnScreen(loc)
+			val appBarBottom = loc[1] + viewBinding.appbar.height
+			supportActionBar?.setDisplayShowTitleEnabled(titleBottom < appBarBottom)
+		}
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		setDisplayHomeAsUp(isEnabled = true, showUpAsClose = false)
 		supportActionBar?.setDisplayShowTitleEnabled(false)
 		viewBinding.chipFavorite.setOnClickListener(this)
@@ -255,9 +277,13 @@ class DetailsActivity :
 
 	override fun onProvideAssistContent(outContent: AssistContent) {
 		super.onProvideAssistContent(outContent)
+<<<<<<< HEAD
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
 		}
+=======
+		viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	}
 
 	override fun onDestroy() {

@@ -51,6 +51,10 @@ import org.draken.usagi.core.network.MangaHttpClient
 import org.draken.usagi.core.network.imageproxy.ImageProxyInterceptor
 import org.draken.usagi.core.parser.MangaDataRepository
 import org.draken.usagi.core.parser.MangaRepository
+<<<<<<< HEAD
+=======
+import org.draken.usagi.core.parser.MirrorSwitcher
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import org.draken.usagi.core.prefs.AppSettings
 import org.draken.usagi.core.util.MimeTypes
 import org.draken.usagi.core.util.Throttler
@@ -93,6 +97,12 @@ import org.koitharu.kotatsu.parsers.util.mapToSet
 import org.koitharu.kotatsu.parsers.util.requireBody
 import org.koitharu.kotatsu.parsers.util.runCatchingCancellable
 import org.draken.usagi.reader.domain.PageLoader
+<<<<<<< HEAD
+=======
+import org.draken.usagi.download.domain.DownloadParallelismManager
+import org.draken.usagi.download.domain.SmartDownloadQueue
+import org.draken.usagi.download.domain.analytics.DownloadAnalytics
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import java.io.File
 import java.util.UUID
 import java.util.concurrent.TimeUnit
@@ -113,6 +123,13 @@ class DownloadWorker @AssistedInject constructor(
 	@LocalStorageChanges private val localStorageChanges: MutableSharedFlow<LocalManga?>,
 	private val slowdownDispatcher: DownloadSlowdownDispatcher,
 	private val imageProxyInterceptor: ImageProxyInterceptor,
+<<<<<<< HEAD
+=======
+	private val mirrorSwitcher: MirrorSwitcher,
+	private val parallelismManager: DownloadParallelismManager,
+	private val analytics: DownloadAnalytics,
+	private val smartQueue: SmartDownloadQueue,
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	notificationFactoryFactory: DownloadNotificationFactory.Factory,
 ) : CoroutineWorker(appContext, params) {
 
@@ -227,7 +244,12 @@ class DownloadWorker @AssistedInject constructor(
 					} ?: continue
 					val pageCounter = AtomicInteger(0)
 					channelFlow {
+<<<<<<< HEAD
 						val semaphore = Semaphore(MAX_PAGES_PARALLELISM)
+=======
+						val pageParallelism = parallelismManager.resolveParallelism(settings.downloadParallelism)
+						val semaphore = Semaphore(pageParallelism)
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 						for ((pageIndex, page) in pages.withIndex()) {
 							checkIsPaused()
 							launch {
@@ -283,6 +305,10 @@ class DownloadWorker @AssistedInject constructor(
 				val localManga = LocalMangaParser(output.rootFile).getManga(withDetails = false)
 				localStorageChanges.emit(localManga)
 				publishState(currentState.copy(localManga = localManga, eta = -1L, isStuck = false))
+<<<<<<< HEAD
+=======
+				smartQueue.remove(manga.id)
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 			} catch (e: Exception) {
 				if (e !is CancellationException) {
 					publishState(
@@ -486,6 +512,10 @@ class DownloadWorker @AssistedInject constructor(
 		@ApplicationContext private val context: Context,
 		private val mangaDataRepository: MangaDataRepository,
 		private val workManager: WorkManager,
+<<<<<<< HEAD
+=======
+		private val smartQueue: SmartDownloadQueue,
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	) {
 
 		fun observeWorks(): Flow<List<WorkInfo>> = workManager
@@ -586,7 +616,11 @@ class DownloadWorker @AssistedInject constructor(
 	private companion object {
 
 		const val MAX_FAILSAFE_ATTEMPTS = 2
+<<<<<<< HEAD
 		const val MAX_PAGES_PARALLELISM = 4
+=======
+		// Adaptive: resolved at runtime via DownloadParallelismManager
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		const val DOWNLOAD_ERROR_DELAY = 2_000L
 		const val MAX_RETRY_DELAY = 7_200_000L // 2 hours
 		const val TAG = "download"

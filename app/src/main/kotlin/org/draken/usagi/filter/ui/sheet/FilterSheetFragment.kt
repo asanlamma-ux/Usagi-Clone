@@ -1,6 +1,9 @@
 package org.draken.usagi.filter.ui.sheet
 
+<<<<<<< HEAD
 import android.os.Build
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.os.Bundle
 import android.text.InputFilter
 import android.view.Gravity
@@ -132,9 +135,13 @@ class FilterSheetFragment : BaseAdaptiveSheet<SheetFilterBinding>(),
 
     private fun SheetFilterBinding.adjustForEmbeddedLayout() {
         layoutBody.updatePadding(top = layoutBody.paddingBottom)
+<<<<<<< HEAD
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			scrollView.scrollIndicators = 0
 		}
+=======
+        scrollView.scrollIndicators = 0
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
         buttonDone.isVisible = false
         this.root.layoutParams?.height = ViewGroup.LayoutParams.MATCH_PARENT
         buttonSave.updateLayoutParams<LinearLayout.LayoutParams> {

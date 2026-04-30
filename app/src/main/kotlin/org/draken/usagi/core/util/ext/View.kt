@@ -28,7 +28,10 @@ import com.google.android.material.progressindicator.BaseProgressIndicator
 import com.google.android.material.slider.RangeSlider
 import com.google.android.material.slider.Slider
 import com.google.android.material.tabs.TabLayout
+<<<<<<< HEAD
 import org.draken.usagi.core.ui.OnContextClickListenerCompat
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import kotlin.math.roundToInt
 
 fun View.hasGlobalPoint(x: Int, y: Int): Boolean {
@@ -169,12 +172,15 @@ fun BaseProgressIndicator<*>.showOrHide(value: Boolean) {
 	}
 }
 
+<<<<<<< HEAD
 fun View.setOnContextClickListenerCompat(listener: OnContextClickListenerCompat) {
 	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 		setOnContextClickListener(listener::onContextClick)
 	}
 }
 
+=======
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 fun View.setTooltipCompat(tooltip: CharSequence?) {
 	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 		tooltipText = tooltip

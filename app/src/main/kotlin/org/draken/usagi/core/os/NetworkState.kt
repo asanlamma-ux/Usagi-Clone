@@ -80,12 +80,16 @@ class NetworkState(
 			if (settings.isOfflineCheckDisabled) {
 				return true
 			}
+<<<<<<< HEAD
 			return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 				activeNetwork?.let { isOnline(it) } == true
 			} else {
 				@Suppress("DEPRECATION")
 				activeNetworkInfo?.isConnected == true
 			}
+=======
+			return activeNetwork?.let { isOnline(it) } == true
+>>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 		}
 
 		private fun ConnectivityManager.isOnline(network: Network): Boolean {
