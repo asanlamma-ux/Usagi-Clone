@@ -33,7 +33,7 @@ def buildConfigString = { value ->
 
 def appApplicationId = propertyOrDefault('app.applicationId', 'org.koharu.miyo')
 def appDisplayName = propertyOrDefault('app.displayName', 'Miyo')
-def appUpdatesRepo = propertyOrDefault('app.updatesRepo', 'asanlamma-ux/Usagi-Clone')
+def appUpdatesRepo = propertyOrDefault('app.updatesRepo', 'asanlamma-ux/MIYO')
 def appSourceUrl = propertyOrDefault('app.sourceUrl', "https://github.com/${appUpdatesRepo}")
 def appIconUrl = propertyOrDefault(
 	'app.iconUrl',
