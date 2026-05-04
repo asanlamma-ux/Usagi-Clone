@@ -52,7 +52,11 @@ class DownloadNotificationFactory @AssistedInject constructor(
 	@Assisted val isSilent: Boolean,
 ) {
 
-	private val covers = object : LinkedHashMap<Long, Drawable>(COVER_CACHE_SIZE, 0.75f, true) {
+	private val covers: LinkedHashMap<Long, Drawable> = object : LinkedHashMap<Long, Drawable>(
+		COVER_CACHE_SIZE,
+		0.75f,
+		true,
+	) {
 		override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Long, Drawable>?): Boolean {
 			return eldest != null && size > COVER_CACHE_SIZE
 		}
