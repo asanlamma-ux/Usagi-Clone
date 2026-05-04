@@ -418,7 +418,7 @@
     <string name="address">Address</string>
     <string name="port">Port</string>
     <string name="proxy">Proxy</string>
-    <string name="proxy_bypass_enabled">Censorship bypass</string>
+    <string name="proxy_bypass_enabled">Bypass internet censorship</string>
 	<string name="proxy_bypass_enabled_summary">Route app traffic through the built-in bypass tunnel for blocked networks (beta)</string>
     <string name="invalid_value_message">Invalid value</string>
     <string name="kitsu" translatable="false">Kitsu</string>
@@ -919,7 +919,7 @@
     <string name="download_parallelism">Download parallelism</string>
     <string name="download_parallelism_summary">Number of simultaneous page downloads. Higher values are faster but may trigger rate limits. Set to Auto for device-adaptive selection.</string>
     <string name="download_high_speed">Wi-Fi high-speed mode</string>
-    <string name="download_high_speed_summary">Automatically maximize download concurrency when on Wi-Fi. Faster but uses more network resources.</string>
+    <string name="download_high_speed_summary">Boost Wi-Fi downloads. Auto adapts to your device, or choose a fixed parallelism limit above.</string>
 	<string name="experiment">Experiment</string>
 	<string name="details_backdrop">Set large cover as backdrop</string>
 	<string name="details_backdrop_summary">Show a large cover image at the top as a backdrop image (like Tachiyomi)</string>
@@ -940,7 +940,6 @@
 	<string name="load_success">Plugin imported and loaded successfully</string>
 	<string name="loaded_null">Plugin loaded as null</string>
 	<string name="manage_plugins">Manage plugins</string>
-	<string name="manage_plugins_summary">Load all sources / plugins by importing a single JAR file</string>
 	<string name="missing_in_plugin">Source missing in plugin: %1$s</string>
 	<string name="no_compatible_method">No compatible method found: %1$s(%2$s)</string>
 	<string name="no_plugins">No plugins installed</string>

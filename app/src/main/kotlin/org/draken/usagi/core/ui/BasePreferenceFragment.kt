@@ -9,6 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.preference.ListPreference
+import androidx.preference.ListPreferenceDialogFragmentCompat
+import androidx.preference.MultiSelectListPreference
+import androidx.preference.MultiSelectListPreferenceDialogFragmentCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceScreen
@@ -28,6 +32,7 @@ import org.draken.usagi.core.util.ext.getThemeDrawable
 import org.draken.usagi.core.util.ext.parentView
 import org.draken.usagi.core.util.ext.start
 import org.draken.usagi.core.util.ext.systemBarsInsets
+import org.draken.usagi.core.util.ext.withArgs
 import org.draken.usagi.settings.SettingsActivity
 import javax.inject.Inject
 import com.google.android.material.R as materialR
@@ -83,6 +88,24 @@ abstract class BasePreferenceFragment(@StringRes private val titleId: Int) :
 		}
 	}
 
+	override fun onDisplayPreferenceDialog(preference: Preference) {
+		val dialog = when (preference) {
+			is ListPreference -> MaterialListPreferenceDialogFragment.newInstance(preference.key)
+			is MultiSelectListPreference -> MaterialMultiSelectListPreferenceDialogFragment.newInstance(preference.key)
+			else -> null
+		}
+		if (dialog == null) {
+			super.onDisplayPreferenceDialog(preference)
+			return
+		}
+		if (parentFragmentManager.findFragmentByTag(PREFERENCE_DIALOG_TAG) != null) {
+			return
+		}
+		@Suppress("DEPRECATION")
+		dialog.setTargetFragment(this, 0)
+		dialog.show(parentFragmentManager, PREFERENCE_DIALOG_TAG)
+	}
+
 	protected open fun setTitle(title: CharSequence?) {
 		(activity as? SettingsActivity)?.setSectionTitle(title)
 	}
@@ -118,5 +141,44 @@ abstract class BasePreferenceFragment(@StringRes private val titleId: Int) :
 			}
 		}
 		return -1
+	}
+
+	class MaterialListPreferenceDialogFragment : ListPreferenceDialogFragmentCompat() {
+
+		override fun onStart() {
+			super.onStart()
+			dialog?.window?.setBackgroundDrawable(
+				ContextCompat.getDrawable(requireContext(), R.drawable.m3_popup_background),
+			)
+		}
+
+		companion object {
+
+			fun newInstance(key: String) = MaterialListPreferenceDialogFragment().withArgs(1) {
+				putString(ARG_KEY, key)
+			}
+		}
+	}
+
+	class MaterialMultiSelectListPreferenceDialogFragment : MultiSelectListPreferenceDialogFragmentCompat() {
+
+		override fun onStart() {
+			super.onStart()
+			dialog?.window?.setBackgroundDrawable(
+				ContextCompat.getDrawable(requireContext(), R.drawable.m3_popup_background),
+			)
+		}
+
+		companion object {
+
+			fun newInstance(key: String) = MaterialMultiSelectListPreferenceDialogFragment().withArgs(1) {
+				putString(ARG_KEY, key)
+			}
+		}
+	}
+
+	companion object {
+
+		private const val PREFERENCE_DIALOG_TAG = "androidx.preference.PreferenceFragment.DIALOG"
 	}
 }

@@ -59,8 +59,6 @@ class DownloadsSettingsFragment :
 			entryValues = TriStateOption.entries.names()
 			setDefaultValueCompat(TriStateOption.ASK.name)
 		}
-		findPreference<ListPreference>(AppSettings.KEY_DOWNLOADS_PARALLELISM)?.isEnabled =
-			!settings.isHighSpeedModeEnabled
 		dozeHelper.updatePreference()
 	}
 
@@ -89,11 +87,6 @@ class DownloadsSettingsFragment :
 
 			AppSettings.KEY_DOWNLOADS_METERED_NETWORK -> {
 				updateDownloadsConstraints()
-			}
-
-			AppSettings.KEY_HIGH_SPEED_MODE -> {
-				findPreference<ListPreference>(AppSettings.KEY_DOWNLOADS_PARALLELISM)?.isEnabled =
-					!settings.isHighSpeedModeEnabled
 			}
 
 			AppSettings.KEY_PAGES_SAVE_DIR -> {

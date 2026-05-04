@@ -13,11 +13,15 @@ class DownloadParallelismManager @Inject constructor(
 	@ApplicationContext private val context: Context,
 ) {
 	fun resolveParallelism(sourceOverride: Int?, isHighSpeedModeEnabled: Boolean = false): Int {
-		if (isHighSpeedModeEnabled && isWiFi()) {
-			return MAX_PARALLELISM
-		}
 		if (sourceOverride != null && sourceOverride in MIN_PARALLELISM..MAX_PARALLELISM) {
 			return sourceOverride
+		}
+		if (isHighSpeedModeEnabled && isWiFi()) {
+			return when (describeDeviceTier()) {
+				DeviceTier.HIGH -> MAX_PARALLELISM
+				DeviceTier.MEDIUM -> WIFI_BASE
+				DeviceTier.LOW -> CELLULAR_BASE
+			}
 		}
 		val base = when {
 			isWiFi() -> WIFI_BASE
