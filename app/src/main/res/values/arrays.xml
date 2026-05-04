@@ -98,6 +98,20 @@
 		<item>@string/single_cbz_file</item>
 		<item>@string/multiple_cbz_files</item>
 	</string-array>
+	<string-array name="download_parallelism_options" translatable="false">
+		<item>@string/automatic</item>
+		<item>2 (Power saving)</item>
+		<item>4 (Balanced)</item>
+		<item>6 (Fast)</item>
+		<item>8 (Maximum)</item>
+	</string-array>
+	<string-array name="download_parallelism_values" translatable="false">
+		<item>0</item>
+		<item>2</item>
+		<item>4</item>
+		<item>6</item>
+		<item>8</item>
+	</string-array>
 	<string-array name="tracker_frequency" translatable="false">
 		<item>@string/manual</item>
 		<item>@string/less_frequently</item>
@@ -149,21 +163,4 @@
 		<item>@string/ask_every_time</item>
 		<item>@string/disable</item>
 	</string-array>
-<<<<<<< HEAD
-=======
-<string-array name="download_parallelism_options" translatable="false">
-		<item>@string/automatic</item>
-		<item>2 (Power saving)</item>
-		<item>4 (Balanced)</item>
-		<item>6 (Fast)</item>
-		<item>8 (Maximum)</item>
-	</string-array>
-	<string-array name="download_parallelism_values" translatable="false">
-		<item>0</item>
-		<item>2</item>
-		<item>4</item>
-		<item>6</item>
-		<item>8</item>
-	</string-array>
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 </resources>

@@ -2,20 +2,14 @@ package org.draken.usagi.image.ui
 
 import android.content.Context
 import android.graphics.drawable.LayerDrawable
-<<<<<<< HEAD
 import android.os.Build
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.view.ViewTreeObserver.OnPreDrawListener
 import androidx.annotation.AttrRes
-<<<<<<< HEAD
 import androidx.annotation.RequiresApi
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
 import androidx.core.graphics.ColorUtils
@@ -89,13 +83,9 @@ class CoverImageView @JvmOverloads constructor(
 		if (fallbackDrawable == null) {
 			fallbackDrawable = context.getThemeColor(materialR.attr.colorSurfaceContainer).toDrawable()
 		}
-<<<<<<< HEAD
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			addImageRequestListener(ErrorForegroundListener())
 		}
-=======
-		addImageRequestListener(ErrorForegroundListener())
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	}
 
 	override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -179,10 +169,7 @@ class CoverImageView @JvmOverloads constructor(
 		}
 	}
 
-<<<<<<< HEAD
 	@RequiresApi(Build.VERSION_CODES.M)
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	private inner class ErrorForegroundListener : ImageRequest.Listener {
 
 		override fun onSuccess(request: ImageRequest, result: SuccessResult) {

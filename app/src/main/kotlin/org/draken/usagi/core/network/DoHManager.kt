@@ -36,7 +36,6 @@ class DoHManager(
 		}
 	}
 
-<<<<<<< HEAD
 	private fun getDelegate(): Dns {
 		val provider = forcedProvider ?: settings.dnsOverHttps
 		val current = cachedDelegate
@@ -54,18 +53,6 @@ class DoHManager(
 			cachedProvider = provider
 			newDelegate
 		}
-=======
-	@Synchronized
-	private fun getDelegate(): Dns {
-		var delegate = cachedDelegate
-		val provider = forcedProvider ?: settings.dnsOverHttps
-		if (delegate == null || provider != cachedProvider) {
-			delegate = createDelegate(provider)
-			cachedDelegate = delegate
-			cachedProvider = provider
-		}
-		return delegate
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	}
 
 	private fun createDelegate(provider: DoHProvider): Dns = when (provider) {

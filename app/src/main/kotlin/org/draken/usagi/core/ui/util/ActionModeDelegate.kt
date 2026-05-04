@@ -1,10 +1,7 @@
 package org.draken.usagi.core.ui.util
 
 import android.graphics.Color
-<<<<<<< HEAD
 import android.os.Build
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.view.ViewGroup
 import android.view.Window
 import androidx.activity.OnBackPressedCallback
@@ -17,10 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-<<<<<<< HEAD
 import org.draken.usagi.R
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import org.draken.usagi.core.util.ext.getThemeColor
 import com.google.android.material.R as materialR
 
@@ -43,7 +37,6 @@ class ActionModeDelegate : OnBackPressedCallback(false) {
 		listeners?.forEach { it.onActionModeStarted(mode) }
 		if (window != null) {
 			val ctx = window.context
-<<<<<<< HEAD
 			val actionModeColor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 				ColorUtils.compositeColors(
 					ContextCompat.getColor(ctx, materialR.color.m3_appbar_overlay_color),
@@ -52,12 +45,6 @@ class ActionModeDelegate : OnBackPressedCallback(false) {
 			} else {
 				ContextCompat.getColor(ctx, R.color.usagi_surface)
 			}
-=======
-			val actionModeColor = ColorUtils.compositeColors(
-				ContextCompat.getColor(ctx, materialR.color.m3_appbar_overlay_color),
-				ctx.getThemeColor(materialR.attr.colorSurface),
-			)
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 			defaultStatusBarColor = window.statusBarColor
 			window.statusBarColor = actionModeColor
 			val insets = ViewCompat.getRootWindowInsets(window.decorView)

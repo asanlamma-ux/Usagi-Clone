@@ -2,10 +2,7 @@ package org.draken.usagi.details.ui
 
 import android.app.assist.AssistContent
 import android.content.Context
-<<<<<<< HEAD
 import android.os.Build
-=======
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -257,13 +254,9 @@ class DetailsClassicActivity :
 
 	override fun onProvideAssistContent(outContent: AssistContent) {
 		super.onProvideAssistContent(outContent)
-<<<<<<< HEAD
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
 		}
-=======
-		viewModel.getMangaOrNull()?.publicUrl?.toUriOrNull()?.let { outContent.webUri = it }
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 	}
 
 	override fun isNsfwContent(): Flow<Boolean> = viewModel.manga.map { it?.contentRating == ContentRating.ADULT }

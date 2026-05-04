@@ -916,6 +916,10 @@
     <string name="available_pattern">%1$s available</string>
     <string name="hide_broken_sources">Hide broken sources</string>
     <string name="hide_broken_sources_summary">Hide sources marked as broken from source lists</string>
+    <string name="download_parallelism">Download parallelism</string>
+    <string name="download_parallelism_summary">Number of simultaneous page downloads. Higher values are faster but may trigger rate limits. Set to Auto for device-adaptive selection.</string>
+    <string name="download_high_speed">Wi-Fi high-speed mode</string>
+    <string name="download_high_speed_summary">Automatically maximize download concurrency when on Wi-Fi. Faster but uses more network resources.</string>
 	<string name="experiment">Experiment</string>
 	<string name="details_backdrop">Set large cover as backdrop</string>
 	<string name="details_backdrop_summary">Show a large cover image at the top as a backdrop image (like Tachiyomi)</string>
@@ -947,11 +951,4 @@
 	<string name="plugin_not_found">No plugin found for source: %1$s</string>
 	<string name="set_plugin_name">Set name for this plugin</string>
 	<string name="unknown_source">Unknown source: %1$s</string>
-<<<<<<< HEAD
-=======
-	<string name="download_parallelism">Download parallelism</string>
-	<string name="download_parallelism_summary">Number of simultaneous page downloads. Higher values are faster but may trigger rate limits. Set to Auto for device-adaptive selection.</string>
-	<string name="download_high_speed">Wi-Fi high-speed mode</string>
-	<string name="download_high_speed_summary">Automatically maximize download concurrency when on Wi-Fi. Faster but uses more network resources.</string>
->>>>>>> abd49974e6e6c21783ada6501e12b3446c988ec6
 </resources>
