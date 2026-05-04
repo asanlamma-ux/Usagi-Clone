@@ -68,7 +68,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: [ lint, unit-test ]
-    environment: Miyo
     steps:
       - uses: actions/checkout@v6
 
@@ -87,13 +86,45 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Debug APK
+      - name: Load MIYO build variables
         env:
+          MIYO_VARIABLES: ${{ vars.MIYO }}
           APP_APPLICATION_ID: ${{ vars.APP_APPLICATION_ID }}
           APP_DISPLAY_NAME: ${{ vars.APP_DISPLAY_NAME }}
           APP_UPDATES_REPO: ${{ vars.APP_UPDATES_REPO }}
           APP_SOURCE_URL: ${{ vars.APP_SOURCE_URL }}
           APP_ICON_URL: ${{ vars.APP_ICON_URL }}
+        run: |
+          set -euo pipefail
+
+          write_build_env() {
+            case "$1" in
+              APP_APPLICATION_ID|APP_DISPLAY_NAME|APP_UPDATES_REPO|APP_SOURCE_URL|APP_ICON_URL)
+                if [ -n "$2" ]; then
+                  printf '%s=%s\n' "$1" "$2" >> "${GITHUB_ENV}"
+                fi
+                ;;
+            esac
+          }
+
+          if [ -n "${MIYO_VARIABLES:-}" ]; then
+            while IFS='=' read -r key value || [ -n "${key:-}" ]; do
+              key="${key%$'\r'}"
+              value="${value%$'\r'}"
+              case "$key" in
+                ''|\#*) continue ;;
+              esac
+              write_build_env "$key" "$value"
+            done <<< "${MIYO_VARIABLES}"
+          fi
+
+          write_build_env APP_APPLICATION_ID "${APP_APPLICATION_ID:-}"
+          write_build_env APP_DISPLAY_NAME "${APP_DISPLAY_NAME:-}"
+          write_build_env APP_UPDATES_REPO "${APP_UPDATES_REPO:-}"
+          write_build_env APP_SOURCE_URL "${APP_SOURCE_URL:-}"
+          write_build_env APP_ICON_URL "${APP_ICON_URL:-}"
+
+      - name: Build Debug APK
         run: |
           set -euo pipefail
           APP_APPLICATION_ID="${APP_APPLICATION_ID:-org.koharu.miyo}"
@@ -127,11 +158,6 @@ jobs:
       - name: Build Release APK
         if: github.ref == 'refs/heads/main'
         env:
-          APP_APPLICATION_ID: ${{ vars.APP_APPLICATION_ID }}
-          APP_DISPLAY_NAME: ${{ vars.APP_DISPLAY_NAME }}
-          APP_UPDATES_REPO: ${{ vars.APP_UPDATES_REPO }}
-          APP_SOURCE_URL: ${{ vars.APP_SOURCE_URL }}
-          APP_ICON_URL: ${{ vars.APP_ICON_URL }}
           APP_RELEASE_CERT_SHA256: ${{ secrets.APP_RELEASE_CERT_SHA256 }}
           ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
           ANDROID_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}
