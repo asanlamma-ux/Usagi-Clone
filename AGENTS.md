@@ -85,6 +85,31 @@ Before ending a pass, report:
 2. What was verified locally by static inspection.
 3. What could not be verified without Gradle, CI, Android SDK tooling, device testing, credentials, or external review.
 
+## GitHub Automation, Push, And CI Logs
+
+When local commits need to be pushed to GitHub from this workspace, use the PAT-backed helper instead of raw `git push` if authentication is required:
+
+```bash
+python3 /root/github_commit_push.py -C "/root/Usagi Comic Reader/Usagi" --push-only --branch main
+```
+
+When committing new local edits and pushing them in one pass, use:
+
+```bash
+python3 /root/github_commit_push.py -C "/root/Usagi Comic Reader/Usagi" --all -m "Commit message" --branch main
+```
+
+This helper shares private config with `/root/github_ci_logs.py`, does not print the token, and prints the follow-up CI trace commands after a successful push. Do not paste tokens into remotes, command output, commits, logs, or final responses.
+
+For GitHub Actions failures, use the CI log helper rather than asking the user to manually upload logs when credentials are already available:
+
+```bash
+/root/github_ci_logs.py commit-runs HEAD
+/root/github_ci_logs.py commit-logs HEAD
+```
+
+For a specific pushed commit, replace `HEAD` with the full commit SHA printed by `/root/github_commit_push.py`. Downloaded logs are saved under `/root/github-ci-logs` unless another output directory is supplied. After reading CI logs, summarize the failing workflow, job, task, and the smallest source-level fix path.
+
 ## Feature And Logic Regression Guard
 
 When implementing or fixing any feature, do not only verify the edited line. Trace the feature's surrounding logic and likely callers so the change does not fix one issue while breaking adjacent behavior.
