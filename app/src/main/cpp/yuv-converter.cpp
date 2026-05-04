@@ -99,7 +99,7 @@ static void yuvToRgbNeon(const uint8_t* yPlane, const uint8_t* uvPlane,
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_org_draken_usagi_core_image_NativeYuvConverter_nativeNv21ToRgba(
+Java_org_koharu_miyo_core_image_NativeYuvConverter_nativeNv21ToRgba(
     JNIEnv* env, jclass clazz,
     jobject yBuffer, jobject uvBuffer,
     jint width, jint height, jint stride,

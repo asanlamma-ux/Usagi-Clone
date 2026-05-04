@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"
 		android:paddingBottom="16dp">
 
-		<org.draken.usagi.core.ui.sheet.AdaptiveSheetHeaderBar
+		<org.koharu.miyo.core.ui.sheet.AdaptiveSheetHeaderBar
 			android:id="@+id/headerBar"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:title="@string/tracking" />
 
-		<org.draken.usagi.image.ui.CoverImageView
+		<org.koharu.miyo.image.ui.CoverImageView
 			android:id="@+id/imageView_cover"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
@@ -124,7 +124,7 @@
 			app:barrierMargin="8dp"
 			app:constraint_referenced_ids="imageView_cover,spinner_status" />
 
-		<org.draken.usagi.core.ui.widgets.SelectableTextView
+		<org.koharu.miyo.core.ui.widgets.SelectableTextView
 			android:id="@+id/textView_description"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"

@@ -3,9 +3,9 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	tools:parentTag="org.draken.usagi.core.ui.widgets.StackLayout">
+	tools:parentTag="org.koharu.miyo.core.ui.widgets.StackLayout">
 
-	<org.draken.usagi.image.ui.CoverImageView
+	<org.koharu.miyo.image.ui.CoverImageView
 		android:id="@+id/imageView_cover3"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"
@@ -21,7 +21,7 @@
 		tools:src="@tools:sample/backgrounds/scenic"
 		tools:tint="#99FFFFFF" />
 
-	<org.draken.usagi.image.ui.CoverImageView
+	<org.koharu.miyo.image.ui.CoverImageView
 		android:id="@+id/imageView_cover2"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"
@@ -36,7 +36,7 @@
 		tools:src="@tools:sample/backgrounds/scenic"
 		tools:tint="#4DFFFFFF" />
 
-	<org.draken.usagi.image.ui.CoverImageView
+	<org.koharu.miyo.image.ui.CoverImageView
 		android:id="@+id/imageView_cover1"
 		android:layout_width="wrap_content"
 		android:layout_height="64dp"

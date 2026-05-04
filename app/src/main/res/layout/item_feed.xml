@@ -8,7 +8,7 @@
 	android:background="@drawable/list_selector"
 	android:clipChildren="false">
 
-	<org.draken.usagi.image.ui.CoverImageView
+	<org.koharu.miyo.image.ui.CoverImageView
 		android:id="@+id/imageView_cover"
 		android:layout_width="40dp"
 		android:layout_height="40dp"

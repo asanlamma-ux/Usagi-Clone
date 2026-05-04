@@ -17,7 +17,7 @@
         android:title="@string/restore_backup" />
 
     <PreferenceScreen
-        android:fragment="org.draken.usagi.backups.ui.periodical.PeriodicalBackupSettingsFragment"
+        android:fragment="org.koharu.miyo.backups.ui.periodical.PeriodicalBackupSettingsFragment"
         android:key="backup_periodic"
         android:persistent="false"
         android:title="@string/periodic_backups" />

@@ -13,7 +13,7 @@
 		android:layout_height="match_parent"
 		android:paddingBottom="12dp">
 
-		<org.draken.usagi.image.ui.CoverImageView
+		<org.koharu.miyo.image.ui.CoverImageView
 			android:id="@+id/imageView_cover"
 			android:layout_width="64dp"
 			android:layout_height="64dp"
@@ -40,7 +40,7 @@
 			app:layout_goneMarginEnd="12dp"
 			tools:text="@tools:sample/lorem" />
 
-		<org.draken.usagi.core.ui.widgets.CheckableImageButton
+		<org.koharu.miyo.core.ui.widgets.CheckableImageButton
 			android:id="@+id/button_expand"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
 			app:trackColor="?android:colorBackground"
 			tools:progress="25" />
 
-		<org.draken.usagi.core.ui.widgets.NestedRecyclerView
+		<org.koharu.miyo.core.ui.widgets.NestedRecyclerView
 			android:id="@+id/recyclerView_chapters"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"

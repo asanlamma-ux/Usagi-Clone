@@ -137,7 +137,7 @@ int probeJpegDimensions(const uint8_t* jpegData, size_t jpegSize,
 }
 
 JNIEXPORT jint JNICALL
-Java_org_draken_usagi_core_image_NativeJpegDecoder_nativeDecodeJpeg(
+Java_org_koharu_miyo_core_image_NativeJpegDecoder_nativeDecodeJpeg(
     JNIEnv* env, jclass clazz,
     jbyteArray data, jobject bitmap,
     jintArray outWidth, jintArray outHeight) {
@@ -171,7 +171,7 @@ Java_org_draken_usagi_core_image_NativeJpegDecoder_nativeDecodeJpeg(
 }
 
 JNIEXPORT jint JNICALL
-Java_org_draken_usagi_core_image_NativeJpegDecoder_nativeProbeJpeg(
+Java_org_koharu_miyo_core_image_NativeJpegDecoder_nativeProbeJpeg(
     JNIEnv* env, jclass clazz,
     jbyteArray data,
     jintArray outWidth, jintArray outHeight) {

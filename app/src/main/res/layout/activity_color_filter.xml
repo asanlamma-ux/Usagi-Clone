@@ -37,7 +37,7 @@
 			android:orientation="vertical"
 			android:padding="@dimen/margin_normal">
 
-			<org.draken.usagi.image.ui.CoverImageView
+			<org.koharu.miyo.image.ui.CoverImageView
 				android:id="@+id/imageView_before"
 				android:layout_width="0dp"
 				android:layout_height="0dp"

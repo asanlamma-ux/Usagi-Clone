@@ -9,7 +9,7 @@
 extern "C" {
 
 JNIEXPORT jstring JNICALL
-Java_org_draken_usagi_core_nativeio_NativeImageProbe_nativeProbeFormat(
+Java_org_koharu_miyo_core_nativeio_NativeImageProbe_nativeProbeFormat(
     JNIEnv* env, jobject thiz, jstring filePath) {
     const char* path = env->GetStringUTFChars(filePath, nullptr);
     if (!path) return nullptr;

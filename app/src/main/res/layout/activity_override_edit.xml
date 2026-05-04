@@ -35,7 +35,7 @@
 			android:orientation="vertical"
 			android:paddingBottom="@dimen/screen_padding">
 
-			<org.draken.usagi.image.ui.CoverImageView
+			<org.koharu.miyo.image.ui.CoverImageView
 				android:id="@+id/imageView_cover"
 				android:layout_width="0dp"
 				android:layout_height="0dp"
@@ -67,7 +67,7 @@
 				app:layout_constraintStart_toEndOf="@id/imageView_cover"
 				app:layout_constraintTop_toTopOf="@id/imageView_cover" />
 
-			<org.draken.usagi.core.ui.widgets.ListItemTextView
+			<org.koharu.miyo.core.ui.widgets.ListItemTextView
 				android:id="@+id/button_pick_file"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
 				app:layout_constraintStart_toStartOf="@id/textView_cover_title"
 				app:layout_constraintTop_toBottomOf="@id/textView_cover_title" />
 
-			<org.draken.usagi.core.ui.widgets.ListItemTextView
+			<org.koharu.miyo.core.ui.widgets.ListItemTextView
 				android:id="@+id/button_pick_page"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
 				app:layout_constraintStart_toStartOf="@id/textView_cover_title"
 				app:layout_constraintTop_toBottomOf="@id/button_pick_file" />
 
-			<org.draken.usagi.core.ui.widgets.ListItemTextView
+			<org.koharu.miyo.core.ui.widgets.ListItemTextView
 				android:id="@+id/button_reset_cover"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"

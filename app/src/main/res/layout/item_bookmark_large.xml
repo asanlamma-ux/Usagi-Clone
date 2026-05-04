@@ -9,7 +9,7 @@
 	app:cardBackgroundColor="?attr/colorSurfaceContainerHighest"
 	tools:layout_width="140dp">
 
-	<org.draken.usagi.image.ui.CoverImageView
+	<org.koharu.miyo.image.ui.CoverImageView
 		android:id="@+id/imageView_thumb"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
 		tools:ignore="ContentDescription"
 		tools:src="@tools:sample/backgrounds/scenic[5]" />
 
-	<org.draken.usagi.history.ui.util.ReadingProgressView
+	<org.koharu.miyo.history.ui.util.ReadingProgressView
 		android:id="@+id/progressView"
 		android:layout_width="@dimen/card_indicator_size"
 		android:layout_height="@dimen/card_indicator_size"

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <org.draken.usagi.core.ui.sheet.AdaptiveSheetHeaderBar
+    <org.koharu.miyo.core.ui.sheet.AdaptiveSheetHeaderBar
         android:id="@+id/headerBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,21 +27,21 @@
             android:orientation="vertical"
             android:paddingBottom="@dimen/margin_normal">
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_save_page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/save_page"
                 app:drawableStartCompat="@drawable/ic_save" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_bookmark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/bookmark_add"
                 app:drawableStartCompat="@drawable/ic_bookmark" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_image_server"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                 app:labelBehavior="floating"
                 tools:value="50" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_screen_rotate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,21 +191,21 @@
                 app:drawableStartCompat="@drawable/ic_screen_rotation_lock"
                 tools:visibility="visible" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_scroll_timer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/automatic_scroll"
                 app:drawableStartCompat="@drawable/ic_timer" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_color_filter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/color_correction"
                 app:drawableStartCompat="@drawable/ic_appearance" />
 
-            <org.draken.usagi.core.ui.widgets.ListItemTextView
+            <org.koharu.miyo.core.ui.widgets.ListItemTextView
                 android:id="@+id/button_settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,0 +1,106 @@
+package org.koharu.miyo.settings.sources.adapter
+
+import android.view.View
+import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
+import androidx.core.content.pm.ShortcutManagerCompat
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
+import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
+import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import org.koharu.miyo.R
+import org.koharu.miyo.core.model.getSummary
+import org.koharu.miyo.core.model.getTitle
+import org.koharu.miyo.core.ui.list.OnTipCloseListener
+import org.koharu.miyo.core.util.ext.drawableStart
+import org.koharu.miyo.databinding.ItemSourceConfigBinding
+import org.koharu.miyo.databinding.ItemTipBinding
+import org.koharu.miyo.settings.sources.model.SourceConfigItem
+
+fun sourceConfigItemDelegate2(
+	listener: SourceConfigListener,
+) = adapterDelegateViewBinding<SourceConfigItem.SourceItem, SourceConfigItem, ItemSourceConfigBinding>(
+	{ layoutInflater, parent ->
+		ItemSourceConfigBinding.inflate(
+			layoutInflater,
+			parent,
+			false,
+		)
+	},
+) {
+
+	val iconPinned = ContextCompat.getDrawable(context, R.drawable.ic_pin_small)
+	val eventListener = View.OnClickListener { v ->
+		when (v.id) {
+			R.id.imageView_add -> listener.onItemEnabledChanged(item, true)
+			R.id.imageView_remove -> listener.onItemEnabledChanged(item, false)
+			R.id.imageView_menu -> showSourceMenu(v, item, listener)
+		}
+	}
+	binding.imageViewRemove.setOnClickListener(eventListener)
+	binding.imageViewAdd.setOnClickListener(eventListener)
+	binding.imageViewMenu.setOnClickListener(eventListener)
+
+	bind {
+		binding.textViewTitle.text = item.source.getTitle(context)
+		binding.imageViewAdd.isGone = item.isEnabled || !item.isAvailable
+		binding.imageViewRemove.isVisible = item.isEnabled && item.isDisableAvailable
+		binding.imageViewMenu.isVisible = item.isEnabled
+		binding.textViewTitle.drawableStart = if (item.isPinned) iconPinned else null
+		
+		val summary = item.source.getSummary(context)
+		val pluginSource = item.source as? org.koharu.miyo.core.model.PluginMangaSource
+		if (pluginSource != null) {
+			binding.textViewDescription.text = if (summary == null) pluginSource.jarName else "$summary • ${pluginSource.jarName}"
+		} else {
+			binding.textViewDescription.text = summary
+		}
+		
+		binding.imageViewIcon.setImageAsync(item.source)
+	}
+}
+
+fun sourceConfigTipDelegate(
+	listener: OnTipCloseListener<SourceConfigItem.Tip>,
+) = adapterDelegateViewBinding<SourceConfigItem.Tip, SourceConfigItem, ItemTipBinding>(
+	{ layoutInflater, parent -> ItemTipBinding.inflate(layoutInflater, parent, false) },
+) {
+
+	binding.buttonClose.setOnClickListener {
+		listener.onCloseTip(item)
+	}
+
+	bind {
+		binding.imageViewIcon.setImageResource(item.iconResId)
+		binding.textView.setText(item.textResId)
+	}
+}
+
+fun sourceConfigEmptySearchDelegate() =
+	adapterDelegate<SourceConfigItem.EmptySearchResult, SourceConfigItem>(
+		R.layout.item_sources_empty,
+	) { }
+
+private fun showSourceMenu(
+	anchor: View,
+	item: SourceConfigItem.SourceItem,
+	listener: SourceConfigListener,
+) {
+	val menu = PopupMenu(anchor.context, anchor)
+	menu.inflate(R.menu.popup_source_config)
+	menu.menu.findItem(R.id.action_shortcut)
+		?.isVisible = ShortcutManagerCompat.isRequestPinShortcutSupported(anchor.context)
+	menu.menu.findItem(R.id.action_pin)?.isVisible = item.isEnabled
+	menu.menu.findItem(R.id.action_pin)?.isChecked = item.isPinned
+	menu.menu.findItem(R.id.action_lift)?.isVisible = item.isDraggable
+	menu.setOnMenuItemClickListener {
+		when (it.itemId) {
+			R.id.action_settings -> listener.onItemSettingsClick(item)
+			R.id.action_lift -> listener.onItemLiftClick(item)
+			R.id.action_shortcut -> listener.onItemShortcutClick(item)
+			R.id.action_pin -> listener.onItemPinClick(item)
+		}
+		true
+	}
+	menu.show()
+}

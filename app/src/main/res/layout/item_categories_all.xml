@@ -10,7 +10,7 @@
 	android:paddingStart="?android:listPreferredItemPaddingStart"
 	tools:ignore="RtlSymmetry">
 
-	<org.draken.usagi.image.ui.CoverStackView
+	<org.koharu.miyo.image.ui.CoverStackView
 		android:id="@+id/coversView"
 		android:layout_width="0dp"
 		android:layout_height="@dimen/category_covers_height"

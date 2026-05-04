@@ -41,7 +41,7 @@
 
 	<Preference
 		android:dependency="tracker_enabled"
-		android:fragment="org.draken.usagi.settings.NotificationSettingsLegacyFragment"
+		android:fragment="org.koharu.miyo.settings.NotificationSettingsLegacyFragment"
 		android:key="notifications_settings"
 		android:title="@string/notifications_settings" />
 
@@ -76,7 +76,7 @@
 			android:title="@string/disable_battery_optimization"
 			app:isPreferenceVisible="false" />
 
-		<org.draken.usagi.settings.utils.LinksPreference
+		<org.koharu.miyo.settings.utils.LinksPreference
 			android:icon="@drawable/ic_info_outline"
 			android:key="track_warning"
 			android:persistent="false"

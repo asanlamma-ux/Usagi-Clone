@@ -69,7 +69,7 @@
 
 	</HorizontalScrollView>
 
-	<org.draken.usagi.stats.ui.views.PieChartView
+	<org.koharu.miyo.stats.ui.views.PieChartView
 		android:id="@+id/chart"
 		android:layout_width="0dp"
 		android:layout_height="0dp"

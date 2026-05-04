@@ -13,7 +13,7 @@
 		android:layout_height="wrap_content"
 		android:paddingBottom="?actionBarSize">
 
-		<org.draken.usagi.image.ui.CoverImageView
+		<org.koharu.miyo.image.ui.CoverImageView
 			android:id="@+id/imageView_cover"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
@@ -149,7 +149,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="@id/button_read" />
 
-		<org.draken.usagi.core.ui.widgets.ChipsView
+		<org.koharu.miyo.core.ui.widgets.ChipsView
 			android:id="@+id/chips_tags"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/button_read" />
 
-		<org.draken.usagi.core.ui.widgets.SelectableTextView
+		<org.koharu.miyo.core.ui.widgets.SelectableTextView
 			android:id="@+id/textView_description"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"

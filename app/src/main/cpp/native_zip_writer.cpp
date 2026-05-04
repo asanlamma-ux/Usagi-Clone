@@ -13,7 +13,7 @@
 extern "C" {
 
 JNIEXPORT jlong JNICALL
-Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeOpenZip(
+Java_org_koharu_miyo_core_nativeio_NativeZipWriter_nativeOpenZip(
     JNIEnv* env, jobject thiz, jstring path, jboolean append) {
     const char* pathStr = env->GetStringUTFChars(path, nullptr);
     if (!pathStr) return 0;
@@ -28,7 +28,7 @@ Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeOpenZip(
 }
 
 JNIEXPORT void JNICALL
-Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeCloseZip(
+Java_org_koharu_miyo_core_nativeio_NativeZipWriter_nativeCloseZip(
     JNIEnv* env, jobject thiz, jlong handle) {
     FILE* file = reinterpret_cast<FILE*>(handle);
     if (file) {
@@ -37,7 +37,7 @@ Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeCloseZip(
 }
 
 JNIEXPORT jboolean JNICALL
-Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromDisk(
+Java_org_koharu_miyo_core_nativeio_NativeZipWriter_nativeAppendFileFromDisk(
     JNIEnv* env, jobject thiz, jlong handle, jstring entryName, jstring srcPath) {
     FILE* dest = reinterpret_cast<FILE*>(handle);
     if (!dest) return JNI_FALSE;
@@ -115,7 +115,7 @@ Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromDisk(
 }
 
 JNIEXPORT jboolean JNICALL
-Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromMemory(
+Java_org_koharu_miyo_core_nativeio_NativeZipWriter_nativeAppendFileFromMemory(
     JNIEnv* env, jobject thiz, jlong handle, jstring entryName,
     jbyteArray data, jint offset, jint length) {
     FILE* dest = reinterpret_cast<FILE*>(handle);
@@ -160,7 +160,7 @@ Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromMemory(
 }
 
 JNIEXPORT jlong JNICALL
-Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeBenchmarkWrite(
+Java_org_koharu_miyo_core_nativeio_NativeZipWriter_nativeBenchmarkWrite(
     JNIEnv* env, jobject thiz, jstring path, jint targetSizeMb) {
     const char* pathStr = env->GetStringUTFChars(path, nullptr);
     if (!pathStr) return -1;

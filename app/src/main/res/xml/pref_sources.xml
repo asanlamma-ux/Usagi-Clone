@@ -15,13 +15,13 @@
         android:title="@string/show_in_grid_view" />
 
     <PreferenceScreen
-        android:fragment="org.draken.usagi.settings.sources.manage.SourcesManageFragment"
+        android:fragment="org.koharu.miyo.settings.sources.manage.SourcesManageFragment"
         android:key="remote_sources"
         android:persistent="false"
         android:title="@string/manage_sources" />
 
     <PreferenceScreen
-        android:fragment="org.draken.usagi.settings.sources.manage.plugins.PluginsManageFragment"
+        android:fragment="org.koharu.miyo.settings.sources.manage.plugins.PluginsManageFragment"
         android:key="plugins_manager"
         android:persistent="false"
         android:title="@string/manage_plugins" />

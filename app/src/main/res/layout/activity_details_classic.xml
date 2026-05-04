@@ -72,7 +72,7 @@
 					android:layout_marginTop="110dp"
 					android:paddingBottom="@dimen/margin_normal">
 
-					<org.draken.usagi.image.ui.CoverImageView
+					<org.koharu.miyo.image.ui.CoverImageView
 						android:id="@+id/imageView_cover"
 						android:layout_width="0dp"
 						android:layout_height="0dp"
@@ -121,7 +121,7 @@
 						app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
 						app:layout_constraintEnd_toEndOf="@id/imageView_cover" />
 
-					<org.draken.usagi.core.ui.widgets.SelectableTextView
+					<org.koharu.miyo.core.ui.widgets.SelectableTextView
 						android:id="@+id/textView_title"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
 						app:layout_constraintTop_toTopOf="parent"
 						tools:text="@tools:sample/lorem" />
 
-					<org.draken.usagi.core.ui.widgets.SelectableTextView
+					<org.koharu.miyo.core.ui.widgets.SelectableTextView
 						android:id="@+id/textView_subtitle"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
 						app:layout_constraintStart_toStartOf="parent"
 						app:layout_constraintTop_toBottomOf="@id/barrier_header" />
 
-					<org.draken.usagi.core.ui.widgets.ProgressButton
+					<org.koharu.miyo.core.ui.widgets.ProgressButton
 						android:id="@+id/button_read"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
@@ -293,7 +293,7 @@
 						app:layout_constraintBaseline_toBaselineOf="@id/textView_description_title"
 						app:layout_constraintEnd_toEndOf="parent" />
 
-					<org.draken.usagi.core.ui.widgets.SelectableTextView
+					<org.koharu.miyo.core.ui.widgets.SelectableTextView
 						android:id="@+id/textView_description"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
@@ -311,7 +311,7 @@
 						tools:ignore="UnusedAttribute"
 						tools:text="@tools:sample/lorem/random" />
 
-					<org.draken.usagi.core.ui.widgets.ChipsView
+					<org.koharu.miyo.core.ui.widgets.ChipsView
 						android:id="@+id/chips_tags"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
@@ -471,7 +471,7 @@
 
 	<androidx.fragment.app.FragmentContainerView
 		android:id="@+id/container_bottom_sheet"
-		android:name="org.draken.usagi.details.ui.pager.ChaptersPagesSheet"
+		android:name="org.koharu.miyo.details.ui.pager.ChaptersPagesSheet"
 		style="@style/Widget.Material3.BottomSheet"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

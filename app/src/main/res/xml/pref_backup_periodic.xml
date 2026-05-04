@@ -32,7 +32,7 @@
 		android:summary="@string/delete_old_backups_summary"
 		android:title="@string/delete_old_backups" />
 
-	<org.draken.usagi.settings.utils.SliderPreference
+	<org.koharu.miyo.settings.utils.SliderPreference
 		android:dependency="backup_periodic_trim"
 		android:key="backup_periodic_count"
 		android:stepSize="1"

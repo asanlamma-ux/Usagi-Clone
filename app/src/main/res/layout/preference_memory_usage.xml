@@ -9,7 +9,7 @@
 	android:paddingBottom="4dp"
 	tools:ignore="RtlSymmetry">
 
-	<org.draken.usagi.core.ui.widgets.SegmentedBarView
+	<org.koharu.miyo.core.ui.widgets.SegmentedBarView
 		android:id="@+id/bar"
 		android:layout_width="match_parent"
 		android:layout_height="18dp"

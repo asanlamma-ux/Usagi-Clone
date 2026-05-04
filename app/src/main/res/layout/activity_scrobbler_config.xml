@@ -26,7 +26,7 @@
 				android:layout_height="?attr/actionBarSize"
 				app:layout_collapseMode="pin">
 
-				<org.draken.usagi.core.image.CoilImageView
+				<org.koharu.miyo.core.image.CoilImageView
 					android:id="@+id/imageView_avatar"
 					android:layout_width="28dp"
 					android:layout_height="28dp"

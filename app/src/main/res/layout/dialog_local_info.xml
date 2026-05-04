@@ -17,7 +17,7 @@
 		android:text="@string/location"
 		android:textAppearance="?textAppearanceLabelMedium" />
 
-	<org.draken.usagi.core.ui.widgets.SelectableTextView
+	<org.koharu.miyo.core.ui.widgets.SelectableTextView
 		android:id="@+id/textView_path"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
 		android:textIsSelectable="true"
 		tools:text="/storage/emulated/0/Manga/lorem.cbz" />
 
-	<org.draken.usagi.core.ui.widgets.SegmentedBarView
+	<org.koharu.miyo.core.ui.widgets.SegmentedBarView
 		android:id="@+id/barView"
 		android:layout_width="match_parent"
 		android:layout_height="18dp"
