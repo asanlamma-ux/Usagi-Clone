@@ -16,19 +16,19 @@ android {
 	namespace = 'org.draken.usagi'
 
 	defaultConfig {
-		applicationId 'org.draken.usagi'
+		applicationId = 'org.draken.usagi'
 		minSdk = 21
 		targetSdk = 36
 		versionCode = 8
 		versionName = '0.0.2-beta3'
 		generatedDensities = []
-		testInstrumentationRunner 'org.draken.usagi.HiltTestRunner'
+		testInstrumentationRunner = 'org.draken.usagi.HiltTestRunner'
 		ksp {
 			arg('room.generateKotlin', 'true')
 		}
 		androidResources {
 			// https://issuetracker.google.com/issues/408030127
-			generateLocaleConfig false
+			generateLocaleConfig = false
 		}
 		def localProperties = new Properties()
 		def localPropertiesFile = rootProject.file('local.properties')
@@ -42,14 +42,14 @@ android {
 			applicationIdSuffix = '.debug'
 		}
 		release {
-			minifyEnabled true
-			shrinkResources true
+			minifyEnabled = true
+			shrinkResources = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}
 	buildFeatures {
-		viewBinding true
-		buildConfig true
+		viewBinding = true
+		buildConfig = true
 	}
 	packaging {
 		jniLibs {
@@ -67,7 +67,7 @@ android {
 		main.java.srcDirs += 'src/main/kotlin/'
 	}
 	compileOptions {
-		coreLibraryDesugaringEnabled true
+		coreLibraryDesugaringEnabled = true
 		sourceCompatibility JavaVersion.VERSION_17
 		targetCompatibility JavaVersion.VERSION_17
 	}
@@ -94,18 +94,18 @@ android {
 		schemaDirectory "$projectDir/schemas"
 	}
 	lint {
-		abortOnError true
+		abortOnError = true
 		disable 'MissingTranslation', 'PrivateResource', 'SetJavaScriptEnabled', 'SimpleDateFormat'
 	}
-	ndkVersion '27.0.12077973'
+	ndkVersion = '27.0.12077973'
 	externalNativeBuild {
 		cmake {
-			path 'src/main/cpp/CMakeLists.txt'
+			path = file('src/main/cpp/CMakeLists.txt')
 		}
 	}
 	testOptions {
-		unitTests.includeAndroidResources true
-		unitTests.returnDefaultValues false
+		unitTests.includeAndroidResources = true
+		unitTests.returnDefaultValues = false
 		kotlin {
 			compilerOptions {
 				freeCompilerArgs.add(

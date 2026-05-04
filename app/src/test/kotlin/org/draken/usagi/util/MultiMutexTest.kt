@@ -9,6 +9,7 @@ import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.yield
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Ignore
 import org.junit.Test
 import org.draken.usagi.core.util.MultiMutex
@@ -21,9 +22,9 @@ class MultiMutexTest {
 		mutex.lock(1)
 		mutex.lock(2)
 		mutex.unlock(1)
-		assert(mutex.size == 1)
+		assertEquals(1, mutex.size)
 		mutex.unlock(2)
-		assert(mutex.isEmpty())
+		assertTrue(mutex.isEmpty())
 	}
 
 	@Test

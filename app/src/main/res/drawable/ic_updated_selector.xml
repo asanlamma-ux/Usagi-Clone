@@ -12,9 +12,4 @@
 		android:drawable="@drawable/ic_updated_checked"
 		android:state_checked="true" />
 
-	<!--<transition
-		android:drawable="@drawable/TODO"
-		android:fromId="@id/normal"
-		android:toId="@id/checked" />-->
-
 </animated-selector>

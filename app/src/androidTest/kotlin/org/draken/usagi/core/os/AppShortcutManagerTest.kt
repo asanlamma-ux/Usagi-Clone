@@ -3,6 +3,7 @@ package org.draken.usagi.core.os
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.core.content.getSystemService
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -65,6 +66,7 @@ class AppShortcutManagerTest {
 		assertEquals(1, shortcuts.size)
 	}
 
+	@RequiresApi(Build.VERSION_CODES.N_MR1)
 	private fun getShortcuts(): List<ShortcutInfo> {
 		val context = InstrumentationRegistry.getInstrumentation().targetContext
 		val manager = checkNotNull(context.getSystemService<ShortcutManager>())
