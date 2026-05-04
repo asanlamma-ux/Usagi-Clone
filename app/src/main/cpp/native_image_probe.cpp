@@ -9,8 +9,8 @@
 extern "C" {
 
 JNIEXPORT jstring JNICALL
-Java_org_draken_usagi_core_native_NativeImageProbe_nativeProbeFormat(
-    JNIEnv* env, jclass clazz, jstring filePath) {
+Java_org_draken_usagi_core_nativeio_NativeImageProbe_nativeProbeFormat(
+    JNIEnv* env, jobject thiz, jstring filePath) {
     const char* path = env->GetStringUTFChars(filePath, nullptr);
     if (!path) return nullptr;
 
@@ -49,17 +49,17 @@ Java_org_draken_usagi_core_native_NativeImageProbe_nativeProbeFormat(
     if (bytesRead >= 2 && header[0] == 'B' && header[1] == 'M') {
         return env->NewStringUTF("image/bmp");
     }
-    // HEIF/HEIC: ftyp box
-    if (bytesRead >= 12 && header[4] == 'f' && header[5] == 't' &&
-        header[6] == 'y' && header[7] == 'p') {
-        return env->NewStringUTF("image/heif");
-    }
     // AVIF: ftypavif
     if (bytesRead >= 12 && header[4] == 'f' && header[5] == 't' &&
         header[6] == 'y' && header[7] == 'p' &&
         header[8] == 'a' && header[9] == 'v' &&
         header[10] == 'i' && header[11] == 'f') {
         return env->NewStringUTF("image/avif");
+    }
+    // HEIF/HEIC: ftyp box
+    if (bytesRead >= 12 && header[4] == 'f' && header[5] == 't' &&
+        header[6] == 'y' && header[7] == 'p') {
+        return env->NewStringUTF("image/heif");
     }
 
     return env->NewStringUTF("");

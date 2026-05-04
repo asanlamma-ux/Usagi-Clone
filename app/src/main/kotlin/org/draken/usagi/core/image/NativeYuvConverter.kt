@@ -35,7 +35,7 @@ object NativeYuvConverter {
     ): Boolean {
         if (!isAvailable) return false
         return try {
-            nv21ToRgba(yPlane, uvPlane, width, height, stride, outBitmap)
+            nativeNv21ToRgba(yPlane, uvPlane, width, height, stride, outBitmap)
             true
         } catch (e: Exception) {
             false
@@ -43,7 +43,7 @@ object NativeYuvConverter {
     }
 
     @JvmStatic
-    private external fun nv21ToRgba(
+    private external fun nativeNv21ToRgba(
         yBuffer: ByteBuffer,
         uvBuffer: ByteBuffer,
         width: Int,

@@ -72,6 +72,8 @@ endif()
 # Our JNI bridge library
 add_library(usagi-native SHARED
     native-init.cpp
+    native_image_probe.cpp
+    native_zip_writer.cpp
     yuv-converter.cpp
 )
 
@@ -90,6 +92,7 @@ endif()
 target_link_libraries(usagi-native
     jnigraphics
     log
+    z
 )
 
 target_include_directories(usagi-native PRIVATE

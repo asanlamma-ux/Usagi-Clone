@@ -1,7 +1,14 @@
 #include <jni.h>
-#include <arm_neon.h>
 #include <cstdint>
+#include <android/bitmap.h>
 #include <android/log.h>
+
+#if defined(__ARM_NEON) || defined(__ARM_NEON__)
+#include <arm_neon.h>
+#define USAGI_HAS_NEON 1
+#else
+#define USAGI_HAS_NEON 0
+#endif
 
 #define LOG_TAG "usagi-yuv"
 
@@ -35,7 +42,7 @@ static void yuvToRgbScalar(const uint8_t* yPlane, const uint8_t* uvPlane,
     }
 }
 
-#ifdef __ARM_NEON
+#if USAGI_HAS_NEON
 static void yuvToRgbNeon(const uint8_t* yPlane, const uint8_t* uvPlane,
                           int width, int height, int stride,
                           uint8_t* rgbaDest, int rgbaStride) {
@@ -72,9 +79,9 @@ static void yuvToRgbNeon(const uint8_t* yPlane, const uint8_t* uvPlane,
                 vaddq_s16(vmulq_s16(vCoeffG_v, sV), vmulq_s16(vCoeffG_u, sU)), 8));
             int16x8_t sB = vaddq_s16(sY, vshrq_n_s16(vmulq_s16(vCoeffB, sU), 8));
 
-            uint8x8_t vR8 = vqmovun_s16(vcombine_s16(sR, sR));
-            uint8x8_t vG8 = vqmovun_s16(vcombine_s16(sG, sG));
-            uint8x8_t vB8 = vqmovun_s16(vcombine_s16(sB, sB));
+            uint8x8_t vR8 = vqmovun_s16(sR);
+            uint8x8_t vG8 = vqmovun_s16(sG);
+            uint8x8_t vB8 = vqmovun_s16(sB);
 
             // Interleave to RGBA
             uint8x8x4_t vRGBA;
@@ -87,24 +94,26 @@ static void yuvToRgbNeon(const uint8_t* yPlane, const uint8_t* uvPlane,
         }
     }
 }
-#endif // __ARM_NEON
+#endif // USAGI_HAS_NEON
 
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_org_draken_usagi_core_image_NativeYuvConverter_nv21ToRgba(
+Java_org_draken_usagi_core_image_NativeYuvConverter_nativeNv21ToRgba(
     JNIEnv* env, jclass clazz,
     jobject yBuffer, jobject uvBuffer,
     jint width, jint height, jint stride,
     jobject rgbaBitmap) {
 
-#ifdef __ARM_NEON
+#if USAGI_HAS_NEON
     // Use NEON path
     auto* yPlane = static_cast<const uint8_t*>(env->GetDirectBufferAddress(yBuffer));
     auto* uvPlane = static_cast<const uint8_t*>(env->GetDirectBufferAddress(uvBuffer));
 
     void* rgbaPixels = nullptr;
-    AndroidBitmap_lockPixels(env, rgbaBitmap, &rgbaPixels);
+    if (AndroidBitmap_lockPixels(env, rgbaBitmap, &rgbaPixels) < 0) {
+        return;
+    }
 
     if (yPlane && uvPlane && rgbaPixels) {
         yuvToRgbNeon(yPlane, uvPlane, width, height, stride,
@@ -118,7 +127,9 @@ Java_org_draken_usagi_core_image_NativeYuvConverter_nv21ToRgba(
     auto* uvPlane = static_cast<const uint8_t*>(env->GetDirectBufferAddress(uvBuffer));
 
     void* rgbaPixels = nullptr;
-    AndroidBitmap_lockPixels(env, rgbaBitmap, &rgbaPixels);
+    if (AndroidBitmap_lockPixels(env, rgbaBitmap, &rgbaPixels) < 0) {
+        return;
+    }
 
     if (yPlane && uvPlane && rgbaPixels) {
         yuvToRgbScalar(yPlane, uvPlane, width, height, stride,

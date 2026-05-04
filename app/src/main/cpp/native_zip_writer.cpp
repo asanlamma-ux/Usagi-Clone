@@ -13,9 +13,10 @@
 extern "C" {
 
 JNIEXPORT jlong JNICALL
-Java_org_draken_usagi_core_native_NativeZipWriter_nativeOpenZip(
-    JNIEnv* env, jclass clazz, jstring path, jboolean append) {
+Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeOpenZip(
+    JNIEnv* env, jobject thiz, jstring path, jboolean append) {
     const char* pathStr = env->GetStringUTFChars(path, nullptr);
+    if (!pathStr) return 0;
     const char* mode = append ? "ab" : "wb";
     FILE* file = fopen(pathStr, mode);
     env->ReleaseStringUTFChars(path, pathStr);
@@ -27,8 +28,8 @@ Java_org_draken_usagi_core_native_NativeZipWriter_nativeOpenZip(
 }
 
 JNIEXPORT void JNICALL
-Java_org_draken_usagi_core_native_NativeZipWriter_nativeCloseZip(
-    JNIEnv* env, jclass clazz, jlong handle) {
+Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeCloseZip(
+    JNIEnv* env, jobject thiz, jlong handle) {
     FILE* file = reinterpret_cast<FILE*>(handle);
     if (file) {
         fclose(file);
@@ -36,13 +37,18 @@ Java_org_draken_usagi_core_native_NativeZipWriter_nativeCloseZip(
 }
 
 JNIEXPORT jboolean JNICALL
-Java_org_draken_usagi_core_native_NativeZipWriter_nativeAppendFileFromDisk(
-    JNIEnv* env, jclass clazz, jlong handle, jstring entryName, jstring srcPath) {
+Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromDisk(
+    JNIEnv* env, jobject thiz, jlong handle, jstring entryName, jstring srcPath) {
     FILE* dest = reinterpret_cast<FILE*>(handle);
     if (!dest) return JNI_FALSE;
     
     const char* entryStr = env->GetStringUTFChars(entryName, nullptr);
     const char* srcStr = env->GetStringUTFChars(srcPath, nullptr);
+    if (!entryStr || !srcStr) {
+        if (entryStr) env->ReleaseStringUTFChars(entryName, entryStr);
+        if (srcStr) env->ReleaseStringUTFChars(srcPath, srcStr);
+        return JNI_FALSE;
+    }
     
     FILE* src = fopen(srcStr, "rb");
     if (!src) {
@@ -100,22 +106,30 @@ Java_org_draken_usagi_core_native_NativeZipWriter_nativeAppendFileFromDisk(
     fwrite(&sizePlaceholder, 1, 4, dest);
     fseek(dest, endPos, SEEK_SET);
     
+    LOGD("Appended %s: %ld bytes, CRC=0x%lx", entryStr, totalWritten, crc);
+
     env->ReleaseStringUTFChars(entryName, entryStr);
     env->ReleaseStringUTFChars(srcPath, srcStr);
     
-    LOGD("Appended %s: %ld bytes, CRC=0x%lx", entryStr, totalWritten, crc);
     return JNI_TRUE;
 }
 
 JNIEXPORT jboolean JNICALL
-Java_org_draken_usagi_core_native_NativeZipWriter_nativeAppendFileFromMemory(
-    JNIEnv* env, jclass clazz, jlong handle, jstring entryName,
+Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeAppendFileFromMemory(
+    JNIEnv* env, jobject thiz, jlong handle, jstring entryName,
     jbyteArray data, jint offset, jint length) {
     FILE* dest = reinterpret_cast<FILE*>(handle);
     if (!dest) return JNI_FALSE;
+    if (!data) return JNI_FALSE;
     
     const char* entryStr = env->GetStringUTFChars(entryName, nullptr);
     jbyte* dataPtr = env->GetByteArrayElements(data, nullptr);
+    jsize dataLength = env->GetArrayLength(data);
+    if (!entryStr || !dataPtr || offset < 0 || length < 0 || offset > dataLength - length) {
+        if (dataPtr) env->ReleaseByteArrayElements(data, dataPtr, JNI_ABORT);
+        if (entryStr) env->ReleaseStringUTFChars(entryName, entryStr);
+        return JNI_FALSE;
+    }
     
     unsigned long crc = crc32(0L, Z_NULL, 0);
     crc = crc32(crc, reinterpret_cast<const unsigned char*>(dataPtr + offset), length);
@@ -146,9 +160,11 @@ Java_org_draken_usagi_core_native_NativeZipWriter_nativeAppendFileFromMemory(
 }
 
 JNIEXPORT jlong JNICALL
-Java_org_draken_usagi_core_native_NativeZipWriter_nativeBenchmarkWrite(
-    JNIEnv* env, jclass clazz, jstring path, jint targetSizeMb) {
+Java_org_draken_usagi_core_nativeio_NativeZipWriter_nativeBenchmarkWrite(
+    JNIEnv* env, jobject thiz, jstring path, jint targetSizeMb) {
     const char* pathStr = env->GetStringUTFChars(path, nullptr);
+    if (!pathStr) return -1;
+    std::string pathCopy(pathStr);
     FILE* file = fopen(pathStr, "wb");
     env->ReleaseStringUTFChars(path, pathStr);
     
@@ -178,7 +194,10 @@ Java_org_draken_usagi_core_native_NativeZipWriter_nativeBenchmarkWrite(
     auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     
     fclose(file);
-    remove(pathStr);
+    remove(pathCopy.c_str());
+    if (elapsedMs <= 0) {
+        return -1;
+    }
     
     double mbps = (targetSizeMb * 1000.0) / elapsedMs;
     LOGD("Benchmark: %dMB in %lldms (%.1f MB/s)", targetSizeMb, (long long)elapsedMs, mbps);

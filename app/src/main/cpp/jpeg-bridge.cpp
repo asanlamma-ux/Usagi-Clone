@@ -41,8 +41,6 @@ int decodeJpegToBitmap(JNIEnv* env, const uint8_t* jpegData, size_t jpegSize,
         return -3;
     }
 
-    int result = 0;
-
     // Setup JPEG decompressor
     struct jpeg_decompress_struct cinfo;
     struct JpegErrorMgr jerr;
@@ -107,7 +105,7 @@ int decodeJpegToBitmap(JNIEnv* env, const uint8_t* jpegData, size_t jpegSize,
 }
 
 int probeJpegDimensions(const uint8_t* jpegData, size_t jpegSize,
-                         int* outWidth, int* outHeight) {
+                        int* outWidth, int* outHeight) {
     if (!jpegData || jpegSize == 0) {
         return -1;
     }
@@ -136,4 +134,70 @@ int probeJpegDimensions(const uint8_t* jpegData, size_t jpegSize,
 
     jpeg_destroy_decompress(&cinfo);
     return 0;
+}
+
+JNIEXPORT jint JNICALL
+Java_org_draken_usagi_core_image_NativeJpegDecoder_nativeDecodeJpeg(
+    JNIEnv* env, jclass clazz,
+    jbyteArray data, jobject bitmap,
+    jintArray outWidth, jintArray outHeight) {
+    if (!data || !bitmap || !outWidth || !outHeight) {
+        return -1;
+    }
+
+    jbyte* dataPtr = env->GetByteArrayElements(data, nullptr);
+    if (!dataPtr) {
+        return -2;
+    }
+
+    int width = 0;
+    int height = 0;
+    int result = decodeJpegToBitmap(
+        env,
+        reinterpret_cast<const uint8_t*>(dataPtr),
+        static_cast<size_t>(env->GetArrayLength(data)),
+        bitmap,
+        &width,
+        &height
+    );
+
+    env->ReleaseByteArrayElements(data, dataPtr, JNI_ABORT);
+
+    if (result == 0) {
+        env->SetIntArrayRegion(outWidth, 0, 1, &width);
+        env->SetIntArrayRegion(outHeight, 0, 1, &height);
+    }
+    return result;
+}
+
+JNIEXPORT jint JNICALL
+Java_org_draken_usagi_core_image_NativeJpegDecoder_nativeProbeJpeg(
+    JNIEnv* env, jclass clazz,
+    jbyteArray data,
+    jintArray outWidth, jintArray outHeight) {
+    if (!data || !outWidth || !outHeight) {
+        return -1;
+    }
+
+    jbyte* dataPtr = env->GetByteArrayElements(data, nullptr);
+    if (!dataPtr) {
+        return -2;
+    }
+
+    int width = 0;
+    int height = 0;
+    int result = probeJpegDimensions(
+        reinterpret_cast<const uint8_t*>(dataPtr),
+        static_cast<size_t>(env->GetArrayLength(data)),
+        &width,
+        &height
+    );
+
+    env->ReleaseByteArrayElements(data, dataPtr, JNI_ABORT);
+
+    if (result == 0) {
+        env->SetIntArrayRegion(outWidth, 0, 1, &width);
+        env->SetIntArrayRegion(outHeight, 0, 1, &height);
+    }
+    return result;
 }
