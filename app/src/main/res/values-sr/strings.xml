@@ -158,7 +158,6 @@
     <string name="list_options">Листа опција</string>
     <string name="related_manga_summary">Прикажи листу сродних Манги. У неким случајевима може бити нетачна или је неће бити</string>
     <string name="remove_completed_downloads_confirm">Ваша историја преузимања ће бити трајно избрисана. Ниједна преузета датотека неће бити избрисана</string>
-    <string name="theme_name_dynamic">Динамичка</string>
     <string name="text_clear_cookies_prompt">Бићеш одјављен са свих извора</string>
     <string name="clear_cookies">Избриши колачиће</string>
     <string name="reader_zoom_buttons_summary">Прикажи дугмад за управљање увећања и смањивања у доњем десном углу</string>
@@ -220,7 +219,6 @@
     <string name="favourites_category_empty">Празна категорија</string>
     <string name="catalog">Каталог</string>
     <string name="protect_application_subtitle">Унеси лозинку да би покренуо апликацију</string>
-    <string name="theme_name_sakura">Сакура</string>
     <string name="unknown">Непознато</string>
     <string name="in_progress">У току</string>
     <string name="suggestions">Предлози</string>
@@ -245,7 +243,6 @@
     <string name="webtoon_zoom">Webtoon увећање</string>
     <string name="various_languages">Разни језици</string>
     <string name="removal_completed">Уклањање је завршено</string>
-    <string name="theme_name_miku">Мику</string>
     <string name="edit">Уреди</string>
     <string name="reader_optimize">Смањи потрошњу меморије (бета)</string>
     <string name="captcha_required">Потребна је CAPTCHA</string>
@@ -373,7 +370,6 @@
     <string name="manual">Прилагођеном избору</string>
     <string name="comics_archive">Архива стрипова</string>
     <string name="more">Више</string>
-    <string name="theme_name_asuka">Асука</string>
     <string name="reader_optimize_summary">Смањи квалитет страница ван екрана да би користио мање меморије</string>
     <string name="always">Увек</string>
     <string name="address">Адреса</string>
@@ -418,13 +414,11 @@
     <string name="percent_string_pattern">%1$s%%</string>
     <string name="chapters_will_removed_background">Поглавља ће бити уклоњена у позадини</string>
     <string name="import_completed_hint">Можете да избришете оригиналну датотеку из складишта за уштеду простора</string>
-    <string name="theme_name_rikka">Рикка</string>
     <string name="disabled">Онемогући</string>
     <string name="long_ago">Давно</string>
     <string name="reader_control_ltr_summary">Не прилагођавај смер пребацивања страница на режим читача, нпр. притиском на десни тастер увек се прелази на следећу страницу. Ова опција утиче само на хардверске улазне уређаје</string>
     <string name="incognito_mode">Режим без чувања</string>
     <string name="no_bookmarks_summary">Можеш направити обележивач док читаш мангу</string>
-    <string name="theme_name_mamimi">Мамими</string>
     <string name="no_manga_sources_catalog_text">У овом одељку нема доступних извора или су сви можда већ додати.
 \nБудите у току</string>
     <string name="available_d">Доступно: %1$d</string>
@@ -465,7 +459,6 @@
     <string name="show">Прикажи</string>
     <string name="genres">Жанрови</string>
     <string name="sync_auth_hint">Можеш се пријавити на постојећи налог или направити нови</string>
-    <string name="theme_name_kanade">Канаде</string>
     <string name="other_storage">Друго складиште</string>
     <string name="backups_output_directory">Резервне копије излазног директоријума</string>
     <string name="invert_colors">Обрни боје</string>
@@ -479,7 +472,6 @@
     <string name="enter_password">Унеси лозинку</string>
     <string name="repeat_password">Поновите лозинку</string>
     <string name="data_restored_success">Сви подаци су обновљени</string>
-    <string name="theme_name_mion">Мион</string>
     <string name="mirror_switching_summary">Самостално пребаци домене за изворе манге у случају грешака ако су послуживачи доступни</string>
     <string name="no_bookmarks_yet">Нема обележивача за сада</string>
     <string name="no_thanks">Не хвала</string>
@@ -812,7 +804,6 @@
     <string name="incognito_for_nsfw">Режим нечувања за NSFW манге</string>
     <string name="additional_action_required">Потребна је додатна радња</string>
     <string name="use_default_cover">Користи подразумевану корицу</string>
-    <string name="theme_name_expressive">Експресивно (Тест)</string>
     <string name="incognito_mode_hint_nsfw">Ова манга може да садржи садржај за одрасле. Да ли желите да користите режим „нечувања“?</string>
     <string name="manga_override_hint">Ове промене ће утицати на то како се манга приказује у апликацији</string>
     <string name="pick_custom_file">Изабери прилагођену датотеку</string>
@@ -831,8 +822,6 @@
     <string name="share_backup">Дели резервну копију</string>
     <string name="reader_multitask">Отвори читач у посебном задатку</string>
     <string name="reader_multitask_summary">Омогућава вам да истовремено држите више отворених читача са различитим мангама</string>
-    <string name="theme_name_itsuka">Итсука</string>
-    <string name="theme_name_totoro">Тоторо</string>
     <string name="book_effect">Жућкаста позадина (плави филтер)</string>
     <string name="local_storage_cleanup">Чишћење локалне меморије</string>
     <string name="packup_creation_failed">Није успело креирање резервне копије</string>

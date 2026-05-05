@@ -70,14 +70,7 @@
     <string name="operation_not_supported">Αυτή η λειτουργία δεν υποστηρίζεται</string>
     <string name="read_mode">Λειτουργία ανάγνωσης</string>
     <string name="grid_size">Μέγεθος πλέγματος</string>
-    <string name="theme_name_mamimi">Μαμίμι</string>
-    <string name="theme_name_kanade">Κανάντε</string>
     <string name="nothing_here">Δεν υπάρχει τίποτα εδώ</string>
-    <string name="theme_name_miku">Μίκου</string>
-    <string name="theme_name_asuka">Άσουκα</string>
-    <string name="theme_name_mion">Μίον</string>
-    <string name="theme_name_rikka">Ρίκκα</string>
-    <string name="theme_name_sakura">Σάκουρα</string>
     <string name="notifications">Ειδοποιήσεις</string>
     <string name="vibration">Δόνηση</string>
     <string name="favourites_categories">Αγαπημένες κατηγορίες</string>
@@ -353,7 +346,6 @@
     <string name="allow_unstable_updates_summary">Λάβε ειδοποιήσεις για ασταθείς εκδόσεις</string>
     <string name="download_started">Η λήψη ξεκίνησε</string>
     <string name="manga_list">Λίστα manga</string>
-    <string name="theme_name_dynamic">Δυναμικό</string>
     <string name="disable_nsfw">Απενεργοποιήση NSFW</string>
     <string name="got_it">Έγινε</string>
     <string name="default_tab">Προεπιλεγμένη καρτέλα</string>

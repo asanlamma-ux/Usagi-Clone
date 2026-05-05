@@ -266,15 +266,8 @@
     <string name="enable_logging">Omogući bilježenje</string>
     <string name="enable_logging_summary">Snimite neke radnje u svrhu otklanjanja pogrešaka. Nemojte ga uključivati ako niste sigurni što radite</string>
     <string name="show_suspicious_content">Prikaži sumnjiv sadržaj</string>
-    <string name="theme_name_dynamic">Dinamična</string>
     <string name="color_theme">Shema boja</string>
     <string name="show_in_grid_view">Prikaži u mrežnom prikazu</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
     <string name="services">Usluge</string>
     <string name="allow_unstable_updates">Dopusti nestabilna ažuriranja</string>
     <string name="allow_unstable_updates_summary">Primajte obavijesti o nestabilnim verzijama</string>
@@ -533,7 +526,6 @@
     <string name="screenshots_block_nsfw">Blokiraj na NSFW-u</string>
     <string name="suggestions_enable">Omogući prijedloge</string>
     <string name="suggestions_summary">Predložiti mangu na temelju vaših preferencija</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="find_similar">Pronađite slično</string>
     <string name="scrobbling_empty_hint">Za praćenje napretka čitanja odaberite Meni → Prati na zaslonu s detaljima mange.</string>
     <string name="sources_reorder_tip">Dodirnite i držite stavku da biste im promijenili redoslijed</string>
@@ -783,7 +775,6 @@
     <string name="search_everywhere">Traži svuda</string>
     <string name="badges_in_lists">Značke u popisima</string>
     <string name="nsfw_16">16+</string>
-    <string name="theme_name_expressive">Ekspresivna (test)</string>
     <string name="chapter_volume_number">Svezak %1$s Poglavlje %2$s</string>
     <string name="chapter_number">Poglavlje %s</string>
     <string name="unnamed_chapter">Neimenovano poglavlje</string>
@@ -833,8 +824,6 @@
     <string name="share_backup">Dijeli sigurnosnu kopiju</string>
     <string name="reader_multitask">Otvori čitač u zasebnom zadatku</string>
     <string name="reader_multitask_summary">Omogućuje istovremeno otvaranje više čitača s različitim mangama</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="book_effect">Žućkasta pozadina (plavi filtar)</string>
     <string name="local_storage_cleanup">Čišćenje lokalne memorije</string>
     <string name="packup_creation_failed">Neuspjelo stvaranje sigurnosne kopije</string>

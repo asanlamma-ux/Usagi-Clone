@@ -19,7 +19,6 @@
     <string name="light_indicator">LED indikaator</string>
     <string name="no_chapters">Pole peatükke</string>
     <string name="related_manga_summary">Näita seotud mangade nimekirja. Mõnel juhul võib see olla ebatäpne või puududa</string>
-    <string name="theme_name_dynamic">Dünaamiline</string>
     <string name="text_clear_cookies_prompt">Teid logitakse välja kõikidest allikatest</string>
     <string name="clear_cookies">Tühjenda küpsisesd</string>
     <string name="favourites_categories">Lemmikud kategooriad</string>
@@ -86,7 +85,6 @@
     <string name="favourites_category_empty">Tühi kategooria</string>
     <string name="protect_application_subtitle">Sisesta parool millega startida äppi</string>
     <string name="remote_sources">Manga allikad</string>
-    <string name="theme_name_sakura">Sakura</string>
     <string name="clear">Tühjenda</string>
     <string name="by_rating">Hinnang</string>
     <string name="unknown">Mitte teatud</string>
@@ -113,7 +111,6 @@
     <string name="list_mode">Loetelu mood</string>
     <string name="removal_completed">Eemaldatud</string>
     <string name="download_complete">Allalaaditud</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="edit">Muuda</string>
     <string name="captcha_required">CAPTCHA vajatud</string>
     <string name="popular">Populaarsed</string>
@@ -243,7 +240,6 @@
     <string name="exit_confirmation">Lahkumise kinnitus</string>
     <string name="comics_archive">Koomikute arhiiv</string>
     <string name="more">Rohkem</string>
-    <string name="theme_name_asuka">Asuka</string>
     <string name="history_is_empty">Pole mingit ajalugu veel</string>
     <string name="always">Alati</string>
     <string name="import_will_start_soon">Import algab varsti</string>
@@ -287,7 +283,6 @@
     <string name="percent_string_pattern">%1$s%%</string>
     <string name="chapters_will_removed_background">Peatükid eemaldatakse taustal</string>
     <string name="import_completed_hint">Ruumi säästmiseks saad originaalfaili salvestusruumist kustutada</string>
-    <string name="theme_name_rikka">Rikka</string>
     <string name="share_image">Jaga pilt</string>
     <string name="disabled">Välja lülitatud</string>
     <string name="long_ago">Kaua aega tagasi</string>
@@ -301,7 +296,6 @@
     <string name="search">Otsi</string>
     <string name="default_mode">Tava mood</string>
     <string name="reader_settings">Lugeja seaded</string>
-    <string name="theme_name_mamimi">Mamimi</string>
     <string name="text_search_holder_secondary">Proovi otsingut teiste sõnadega.</string>
     <string name="error">Viga</string>
     <string name="grid_size">Ruudustiku suurus</string>
@@ -352,7 +346,6 @@
     <string name="allow_unstable_updates">Luba ebastabiilseid uuendusi</string>
     <string name="sync_auth_hint">Sa võid sisse logida olemasolevasse kasutajasse või teha uue</string>
     <string name="create_shortcut">Tee otsetee…</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="other_storage">Teine salvestamisruum</string>
     <string name="updated">Uuendatud</string>
     <string name="color_theme">Värvi skeema</string>
@@ -368,7 +361,6 @@
     <string name="enter_password">Sisesta parool</string>
     <string name="repeat_password">Korda parooli</string>
     <string name="data_restored_success">Kõik andmed on taastatud</string>
-    <string name="theme_name_mion">Mion</string>
     <string name="mirror_switching_summary">Kui peegelserverid on saadaval, siis vea puhul vaheta mangade laadimiseks vajalikke domeene automaatselt</string>
     <string name="no_bookmarks_yet">Pole järjehoidjaid veel</string>
     <string name="no_thanks">Tänan ei</string>

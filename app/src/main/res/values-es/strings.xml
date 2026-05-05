@@ -339,17 +339,9 @@
     <string name="enable_logging_summary">Grabar algunas interaciones para de depurar los fallos. No lo actives si no estás seguro de lo que estás haciendo</string>
     <string name="enable_logging">Activar el registro</string>
     <string name="show_suspicious_content">Mostrar contenido sospechoso</string>
-    <string name="theme_name_dynamic">Dinámico</string>
     <string name="color_theme">Esquema de colores</string>
     <string name="show_in_grid_view">Mostrar en vista de cuadrícula</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="nothing_here">No hay nada aquí</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Canadé</string>
     <string name="scrobbling_empty_hint">Para realizar un seguimiento del progreso de la lectura, seleccione Menú → Seguimiento en la pantalla de detalles del manga.</string>
     <string name="services">Servicios</string>
     <string name="allow_unstable_updates_summary">Recibir notificaciones sobre versiones inestables</string>
@@ -817,7 +809,6 @@
     <string name="manga_override_hint">Estos cambios afectarán a la forma en que se muestra el manga en la aplicación</string>
     <string name="pick_manga_page">Seleccionar página</string>
     <string name="incognito_for_nsfw">Modo incógnito para manga NSFW</string>
-    <string name="theme_name_expressive">Expresivo (Prueba)</string>
     <string name="additional_action_required">Se requieren medidas adicionales</string>
     <string name="hide_from_main_screen">Ocultar de la pantalla principal</string>
     <string name="changelog">Registro de cambios</string>
@@ -894,6 +885,4 @@
     <string name="details_backdrop_blur">Habilitar desenfoque para el fondo</string>
     <string name="auto_double_foldable">Plegable automático de dos páginas</string>
     <string name="two_page_scroll_sensitivity">Sensibilidad de desplazamiento de dos páginas</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
 </resources>

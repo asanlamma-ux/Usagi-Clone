@@ -29,13 +29,4 @@
 	<color name="common_yellow">#FBC02D</color>
 	<color name="nsfw_18">#FF8A65</color>
 	<color name="nsfw_16">#FFD54F</color>
-
-	<!-- Color schemes colors -->
-	<color name="background_miku">#F7FAF8</color>
-	<color name="background_asuka">#FFF8F7</color>
-	<color name="background_mion">#F8FAF6</color>
-	<color name="background_rikka">#FCF8FD</color>
-	<color name="background_sakura">#FFF8F8</color>
-	<color name="background_mamimi">#FFF8F7</color>
-	<color name="background_kanade">#F3F3F3</color>
 </resources>

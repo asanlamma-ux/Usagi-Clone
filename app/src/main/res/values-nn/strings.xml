@@ -238,14 +238,8 @@
     <string name="share_logs">Del loggføringar</string>
     <string name="enable_logging">Loggfør</string>
     <string name="enable_logging_summary">Ta opp nokre gjerder til bruk i istandsetjing</string>
-    <string name="theme_name_dynamic">Skiftande</string>
     <string name="color_theme">Letar</string>
     <string name="show_in_grid_view">Vis som rutenett</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="nothing_here">Ingenting her</string>
     <string name="services">Tenester</string>
     <string name="download_started">Har byrja å hente</string>
@@ -295,8 +289,6 @@
     <string name="import_will_start_soon">Byrjar å føra inn snart</string>
     <string name="contrast">Motsetjing</string>
     <string name="show_suspicious_content">Vis mistenksamt innhald</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="settings_apply_restart_required">Byrja om appen for å nytta desse brigda</string>
     <string name="chapters">Kapittel</string>
     <string name="computing_">Utreknar…</string>

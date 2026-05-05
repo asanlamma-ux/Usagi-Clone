@@ -8,7 +8,7 @@
 	android:background="?selectableItemBackground"
 	android:orientation="vertical"
 	android:padding="6dp"
-	tools:theme="@style/ThemeOverlay.Miyo.Miku">
+	tools:theme="@style/ThemeOverlay.Miyo.OceanBlue">
 
 	<com.google.android.material.card.MaterialCardView
 		android:id="@+id/card"
@@ -93,5 +93,5 @@
 		android:singleLine="true"
 		android:textAppearance="?attr/textAppearanceTitleSmall"
 		android:textColor="?android:attr/textColorPrimary"
-		tools:text="@string/theme_name_miku" />
+		tools:text="@string/theme_name_ocean_blue" />
 </LinearLayout>

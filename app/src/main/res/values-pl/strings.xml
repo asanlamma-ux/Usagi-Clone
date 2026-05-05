@@ -332,8 +332,6 @@
     <string name="clear_new_chapters_counters">Wyczyść też informacje o nowych rozdziałach</string>
     <string name="reset">Resetuj</string>
     <string name="manga_error_description_pattern">Szczegóły błędu:&lt;br&gt;&lt;tt&gt;%1$s&lt;/tt&gt;&lt;br&gt;&lt;br&gt;1. Spróbuj &lt;a href=%2$s&gt;otworzyć mangę w przeglądarce internetowej&lt;/a&gt;, aby upewnić się, że jest dostępna w swoim źródle&lt;br&gt;2. Upewnij się, że używasz &lt;a href=kotatsu://about&gt;najnowszej wersji Miyo&lt;/a&gt;&lt;br&gt;3. Jeśli jest dostępny, wyślij raport o błędzie do programistów.</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="services">Usługi</string>
     <string name="nothing_here">Tutaj nic nie ma</string>
     <string name="scrobbling_empty_hint">By śledzić postęp w czytaniu, wybierz Menu → Śledź na ekranie detali mangi.</string>
@@ -355,12 +353,6 @@
     <string name="show_suspicious_content">Pokaż podejrzane treści</string>
     <string name="color_theme">Schemat kolorów</string>
     <string name="show_in_grid_view">Pokaż w widoku siatki</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_dynamic">Dynamiczne</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mion">Mion</string>
     <string name="ignore_ssl_errors">Ignoruj błędy SSL</string>
     <string name="mirror_switching">Wybierz lustro automatycznie</string>
     <string name="show_on_shelf">Pokaż na półce</string>
@@ -805,7 +797,6 @@
     <string name="unnamed_chapter">Nienazwany rozdział</string>
     <string name="additional_action_required">Wymagane dodatkowe działanie</string>
     <string name="clear_database_summary">Usuń informacje o mandze, które nie są używane</string>
-    <string name="theme_name_expressive">Wyraźny (Test)</string>
     <string name="no_write_permission_to_file">Nie ma uprawnień do zapisu pliku</string>
     <string name="simple">Prosty</string>
     <string name="manga_override_hint">Te zmiany wpłyną na sposób wyświetlania mangi w aplikacji</string>
@@ -830,8 +821,6 @@
     <string name="share_backup">Udostępnianie kopii zapasowej</string>
     <string name="reader_multitask">Otwórz czytnik w osobnym zadaniu</string>
     <string name="hide_from_main_screen">Ukryj na ekranie głównym</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="book_effect">Żółtawe tło (niebieski filtr)</string>
     <string name="packup_creation_failed">Nie udało się stworzyć kopii zapasowej</string>
     <string name="main_screen">Ekran główny</string>

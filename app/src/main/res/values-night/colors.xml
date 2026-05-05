@@ -19,13 +19,4 @@
 	<color name="dim_lite">#66FFFFFF</color>
 	<color name="nsfw_18">#BF360C</color>
 	<color name="nsfw_16">#FF6F00</color>
-
-	<!-- Color schemes colors -->
-	<color name="background_miku">#191C1C</color>
-	<color name="background_asuka">#201A1A</color>
-	<color name="background_mion">#191C1A</color>
-	<color name="background_rikka">#201A1A</color>
-	<color name="background_sakura">#191C1D</color>
-	<color name="background_mamimi">#201A1A</color>
-	<color name="background_kanade">#222222</color>
 </resources>

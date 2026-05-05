@@ -274,16 +274,8 @@
     <string name="enable_logging">Zapnout zaznamenávání</string>
     <string name="enable_logging_summary">Zaznamenejte některé akce pro účely ladění. Nezapínejte jej, pokud si nejste jisti, co děláte</string>
     <string name="show_suspicious_content">Zobrazovat podezřelý kontent</string>
-    <string name="theme_name_dynamic">Dynamické</string>
     <string name="color_theme">Schéma barev</string>
     <string name="show_in_grid_view">Zobrazovat v zobrazení mřížek</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="nothing_here">Nic tu není</string>
     <string name="scrobbling_empty_hint">Pro sledování pokroku čtení, vyberte Menu → Sledovat na displeji detailů mangy.</string>
     <string name="services">Služby</string>
@@ -814,7 +806,6 @@
     <string name="changelog">Seznam změn</string>
     <string name="saved_filters">Uložené filtry</string>
     <string name="enter_name">Vložte jméno</string>
-    <string name="theme_name_expressive">Výrazný (Test)</string>
     <string name="pull_to_prev_chapter">Uvolněte pro otevření předešlé kapitoly</string>
     <string name="pull_to_next_chapter">Uvolněte pro otevření další kapitoly</string>
     <string name="pull_top_no_prev">Žádná předešlá kapitola</string>
@@ -843,8 +834,6 @@
     <string name="changelog_summary">Historie změn pro nedávno vydané verze</string>
     <string name="reader_multitask">Otevřít čtečku ve vlastním okně</string>
     <string name="reader_multitask_summary">Umožňuje zároveň otevřít několik různých mang ve vlastních oknech</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="book_effect">Nažloutlé pozadí (filtr modrého světla)</string>
     <string name="local_storage_cleanup">Čištění místního úložišťe</string>
     <string name="packup_creation_failed">Nepodařilo se vytvořit zálohu</string>

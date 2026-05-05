@@ -280,14 +280,7 @@
     <string name="language">Wika</string>
     <string name="share_logs">Ibahagi ang mga log</string>
     <string name="show_suspicious_content">Magpakita ng kahina-hinalang nilalaman</string>
-    <string name="theme_name_dynamic">Dynamic</string>
     <string name="show_in_grid_view">Ipakita sa grid view</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="nothing_here">Wala naman dito</string>
     <string name="services">Mga serbisyo</string>
     <string name="allow_unstable_updates">Payagan ang mga hindi stable na update</string>
@@ -344,7 +337,6 @@
     <string name="scrobbling_empty_hint">Upang subaybayan ang pag unlad ng pagbabasa, piliin ang Menu → Track sa screen ng mga detalye ng manga.</string>
     <string name="download_started">Nagsimula na ang pag-download</string>
     <string name="color_theme">Scheme ng kulay</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="user_agent">Header ng UserAgent</string>
     <string name="text_file_sizes">B|kB|MB|GB|TB</string>
     <string name="standard">Pamantayan</string>

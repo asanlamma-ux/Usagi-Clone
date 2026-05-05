@@ -292,7 +292,6 @@
     <string name="list_options">Тізімді реттеу</string>
     <string name="related_manga_summary">Байланыс маңга тізімін көрсету. Кейде тізім қате я мүлде болмауы мүмкін</string>
     <string name="remove_completed_downloads_confirm">Жүктеу тарихыңыз тазарады</string>
-    <string name="theme_name_dynamic">Динамикалық</string>
     <string name="reader_zoom_buttons_summary">Ұлғайту батырмасын астыңғы оң жақта көрсету я көрсетпеу</string>
     <string name="pages_cache">Бет кәші</string>
     <string name="reset">Арылту</string>
@@ -323,7 +322,6 @@
     <string name="find_similar">Ұқсасын табу</string>
     <string name="storage_usage">Жадты қолдану</string>
     <string name="data_not_restored_text">Дұрыс сақтық көшірме файылын таңдағаныңызды тексеріңіз</string>
-    <string name="theme_name_sakura">Сакура</string>
     <string name="unknown">Белгісіз</string>
     <string name="in_progress">Оқылып жатыр</string>
     <string name="download_option_manual_selection">Тарауды таңдап шығу</string>
@@ -339,7 +337,6 @@
     <string name="invalid_value_message">Жарамсыз өлшем</string>
     <string name="downloads_cancelled">Жүктеп алу доғарылды</string>
     <string name="webtoon_zoom">Уебтүнді ұлғайту</string>
-    <string name="theme_name_miku">Мику</string>
     <string name="data_not_restored">Дерек қалыпқа келмеді</string>
     <string name="directories">Каталог</string>
     <string name="local_manga_directories">Жергілікті маңга тізімі</string>
@@ -412,7 +409,6 @@
     <string name="exit_confirmation">Шығуды растау</string>
     <string name="comics_archive">Комикс мұрағаты</string>
     <string name="more">Тағы</string>
-    <string name="theme_name_asuka">Асука</string>
     <string name="address">Адресі</string>
     <string name="import_will_start_soon">Импорт қазір басталады</string>
     <string name="compact">Жинақы</string>
@@ -437,13 +433,11 @@
     <string name="voice_search">Дауыс іздеуі</string>
     <string name="enable">Қосу</string>
     <string name="import_completed_hint">Орын үнемдеу үшін түпнұсқа файлды құрылғыдан жойып тастай аласыз</string>
-    <string name="theme_name_rikka">Рикка</string>
     <string name="reader_control_ltr_summary">Оң жақты я оң жақ батырманы басқан сайын бет ауысады</string>
     <string name="language">Тіл</string>
     <string name="incognito_mode">Инкогнито режімі</string>
     <string name="no_bookmarks_summary">Оқып жатқан маңгаға бетбелгі жасай аласыз</string>
     <string name="images_procy_description">Трафик қолдануды азайтып, сурет жүктеп алуды тездету үшін wsrv.nl қызметін қолданыңыз</string>
-    <string name="theme_name_mamimi">Мамими</string>
     <string name="manage">Реттеу</string>
     <string name="manga_list">Маңга тізімі</string>
     <string name="reader_control_ltr">Оқыманы эргономді басқару</string>
@@ -461,7 +455,6 @@
     <string name="show_on_shelf">Сөреде көрсету</string>
     <string name="allow_unstable_updates">Тұрақсыз жаңартуды орнатуға рұқсат беру</string>
     <string name="sync_auth_hint">Жаңа тіркелгі аша аласыз я жаңасын жасай аласыз</string>
-    <string name="theme_name_kanade">Канаде</string>
     <string name="backups_output_directory">Сақтық көшірмесінің каталогы</string>
     <string name="invert_colors">Түстерді терістету</string>
     <string name="color_theme">Түс схемасы</string>
@@ -469,7 +462,6 @@
     <string name="memory_usage_pattern">%1$s - %2$s</string>
     <string name="exit_confirmation_summary">Шығып кету үшін «Кері» батырмасын екі рет басыңыз</string>
     <string name="bookmarks_removed">Бетбелгілер жойылды</string>
-    <string name="theme_name_mion">Мион</string>
     <string name="mirror_switching_summary">Дереккөз дәмейнінің қатесі пайда болып, айнасы қолжетімді болса, өздігінен соған ауыстыру</string>
     <string name="no_bookmarks_yet">Бетбелгі жоқ</string>
     <string name="no_thanks">Жоқ, рақмет</string>

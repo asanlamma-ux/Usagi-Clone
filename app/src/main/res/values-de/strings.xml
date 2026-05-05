@@ -339,14 +339,10 @@
     <string name="show_suspicious_content">Verdächtige Inhalte anzeigen</string>
     <string name="status_dropped">Abgebrochen</string>
     <string name="color_theme">Farbschema</string>
-    <string name="theme_name_dynamic">Dynamisch</string>
-    <string name="theme_name_mamimi">Mamimi</string>
     <string name="nothing_here">Hier ist nichts</string>
     <string name="services">Dienste</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="scrobbling_empty_hint">Um deinen Lesefortschritt zu tracken, wähle Menü → Lesefortschritt tracken auf dem Manga Details Bildschirm.</string>
     <string name="find_similar">Ähnliche finden</string>
-    <string name="theme_name_sakura">Sakura</string>
     <string name="allow_unstable_updates_summary">Benachrichtigungen über instabile Versionen erhalten</string>
     <string name="allow_unstable_updates">Erlaube instabile Updates</string>
     <string name="got_it">Alles klar</string>
@@ -356,10 +352,6 @@
     <string name="folder_with_images_import_description">Du kannst einen Ordner mit Archiven oder Bildern auswählen. Jedes Archiv (oder Unterverzeichnis) wird als ein Kapitel erkannt.</string>
     <string name="speed">Geschwindigkeit</string>
     <string name="show_on_shelf">Im Regal anzeigen</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
     <string name="show_in_grid_view">In Raster-Ansicht anzeigen</string>
     <string name="server_address">Serveradresse</string>
     <string name="mirror_switching">Wähle Mirror automatisch</string>

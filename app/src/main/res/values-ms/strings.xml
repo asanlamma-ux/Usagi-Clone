@@ -352,11 +352,8 @@
     <string name="enable_logging">Dayakan pembalakan</string>
     <string name="enable_logging_summary">Catat beberapa tindakan untuk tujuan debug. Jangan menghidupkannya jika anda tidak pasti apa yang anda lakukan</string>
     <string name="show_suspicious_content">Tunjukkan kandungan yang mencurigakan</string>
-    <string name="theme_name_dynamic">Dinamik</string>
-    <string name="theme_name_expressive">Ekspresif (ujian)</string>
     <string name="color_theme">Skema warna</string>
     <string name="show_in_grid_view">Tunjukkan dalam paparan grid</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="nothing_here">Tidak ada apa -apa di sini</string>
     <string name="scrobbling_empty_hint">Untuk Melacak Progres Membaca, Pilih Menu → LaCak Di Layar Butiran Manga.</string>
     <string name="services">Perkhidmatan</string>
@@ -422,12 +419,6 @@
     <string name="pull_to_prev_chapter">Siaran untuk membuka bab sebelumnya</string>
     <string name="pull_to_next_chapter">Siaran untuk membuka bab seterusnya</string>
     <string name="pull_top_no_prev">Tiada bab sebelumnya</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="pull_bottom_no_next">Tiada bab seterusnya</string>
     <string name="reader_info_bar_summary">Tunjukkan masa sekarang dan kemajuan membaca di bahagian atas skrin</string>
     <string name="show_pages_numbers_summary">Tunjukkan nombor halaman di sudut bawah</string>
@@ -832,8 +823,6 @@
     <string name="share_backup">Kongsi sandaran</string>
     <string name="reader_multitask">Buka pembaca dalam tugas yang berasingan</string>
     <string name="reader_multitask_summary">Membolehkan anda menyimpan beberapa pembaca dengan manga yang berbeza terbuka pada masa yang sama</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="book_effect">Latar belakang kekuningan (penapis biru)</string>
     <string name="local_storage_cleanup">Pembersihan Penyimpanan Tempatan</string>
     <string name="packup_creation_failed">Gagal membuat sandaran</string>

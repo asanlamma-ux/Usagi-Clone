@@ -262,12 +262,8 @@
     <string name="language">भाषा</string>
     <string name="enable_logging">लॉगिंग सक्षम करें</string>
     <string name="show_suspicious_content">संदिग्ध सामग्री दिखाएं</string>
-    <string name="theme_name_dynamic">गतिशील</string>
     <string name="color_theme">रंग योजना</string>
     <string name="show_in_grid_view">ग्रिड दृश्य में दिखाएं</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="scrobbling_empty_hint">पढ़ने की प्रगति को ट्रैक करने के लिए, मंगा विवरण स्क्रीन पर मेनू → ट्रैक का चयन करें।</string>
     <string name="services">सेवाएं</string>
     <string name="settings_apply_restart_required">कृपया इन परिवर्तनों को लागू करने के लिए एप्लिकेशन को पुनः आरंभ करें</string>
@@ -535,10 +531,6 @@
     <string name="prefetch_content">सामग्री प्रीलोड हो रही है</string>
     <string name="share_logs">लॉग साझा करें</string>
     <string name="enable_logging_summary">डिबग उद्देश्यों के लिए कुछ क्रियाएं रिकॉर्ड करें। यदि आप निश्चित नहीं हैं कि आप क्या कर रहे हैं तो इसे चालू न करें</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
     <string name="allow_unstable_updates">अस्थिर अद्यतन की अनुमति दें</string>
     <string name="nothing_here">यहां कुछ नहीं है</string>
     <string name="allow_unstable_updates_summary">अस्थिर बिल्ड के बारे में सूचनाएं प्राप्त करें</string>

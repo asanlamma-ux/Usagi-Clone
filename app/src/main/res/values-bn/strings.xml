@@ -173,8 +173,6 @@
     <string name="source_disabled">উৎস অক্ষম করা হয়েছে</string>
     <string name="delete_old_backups">পুরনো ব্যাকআপ মুছে ফেলুন</string>
     <string name="enable_logging_summary">ডিবাগের উদ্দেশ্যে কিছু অ্যাকশন রেকর্ড করুন। আপনি কী করছেন তা নিশ্চিত না হলে এটি চালু করবেন না</string>
-    <string name="theme_name_dynamic">ডাইনামিক</string>
-    <string name="theme_name_miku">মিকু</string>
     <string name="data_not_restored">ডেটা পুনরুদ্ধার করা হয়নি</string>
     <string name="incognito_mode_hint">আপনার পড়ার অগ্রগতি সেভ হবে না</string>
     <string name="volume_">আওয়াজ%d</string>

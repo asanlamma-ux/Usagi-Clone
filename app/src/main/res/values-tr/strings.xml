@@ -342,20 +342,12 @@
     <string name="services">Hizmetler</string>
     <string name="scrobbling_empty_hint">Okuma ilerlemesini izlemek için manga ayrıntıları ekranında Menü → İzle\'yi seçin.</string>
     <string name="nothing_here">burada hiçbir şey yok</string>
-    <string name="theme_name_dynamic">Dinamik</string>
     <string name="color_theme">Renk teması</string>
     <string name="show_in_grid_view">Izgara görünümünde göster</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="user_agent">UserAgent başlığı</string>
     <string name="allow_unstable_updates_summary">Kararsız versiyonlar hakkında bildirim alın</string>
     <string name="allow_unstable_updates">Kararsız güncellemelere izin ver</string>
     <string name="download_started">İndirme başladı</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
     <string name="settings_apply_restart_required">Bu değişiklikleri uygulamak için lütfen uygulamayı yeniden başlatın</string>
     <string name="find_similar">Benzerini bul</string>
     <string name="web_view_unavailable">WebView kullanılamıyor: WebView sağlayıcısının kurulu olup olmadığını kontrol edin</string>
@@ -817,7 +809,6 @@
     <string name="incognito_mode_hint_nsfw">Bu manga yetişkin içeriği içerebilir. Gizli modu kullanmak ister misiniz?</string>
     <string name="incognito_for_nsfw">NSFW mangaları için gizli mod</string>
     <string name="additional_action_required">Ek işlemler gerekli</string>
-    <string name="theme_name_expressive">İfadesel (Test)</string>
     <string name="hide_from_main_screen">Ana ekrandan gizle</string>
     <string name="changelog">Değişim kaydı</string>
     <string name="changelog_summary">Yeni yayınlanan versiyonlar için değişikliklerin kaydı</string>
@@ -830,8 +821,6 @@
     <string name="share_backup">Yedeği paylaş</string>
     <string name="reader_multitask">Okuyucuyu başka bir görevde aç</string>
     <string name="reader_multitask_summary">Aynı anda farklı okuyucularda farklı mangaları açmanızı sağlar</string>
-    <string name="theme_name_itsuka">İtsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="reader_navigation_inverted">Navigasyon kontrollerini ters çevir</string>
     <string name="reader_navigation_inverted_summary">Ses tuşlarının yönlerini değiştir ve donanımsal yön tuşlarını yer değiştir (sol/yukarı/aşağı/sağ)</string>
     <string name="book_effect">Sarımsı arkaplan (mavi filtre)</string>

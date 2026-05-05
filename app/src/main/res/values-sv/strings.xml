@@ -347,7 +347,6 @@
     <string name="genres_exclude">Exkludera genrer</string>
     <string name="content_rating">Innehållsklassificering</string>
     <string name="reader_control_ltr_summary">Justera inte hållet sidorna vänds åt i läsläget, t.ex. trycker du på höger piltangent bläddrar du alltid framåt. Denna inställning påverkar endast inmatningsenheter</string>
-    <string name="theme_name_dynamic">Dynamisk</string>
     <string name="show_in_grid_view">Visa i rutnätsvy</string>
     <string name="nothing_here">Det finns inget här</string>
     <string name="services">Tjänster</string>
@@ -457,7 +456,6 @@
     <string name="proxy">Proxy</string>
     <string name="show_suspicious_content">Visa misstänksamt innehåll</string>
     <string name="color_theme">Färgtema</string>
-    <string name="theme_name_miku">Miku</string>
     <string name="server_address">Serveradress</string>
     <string name="sync_host_description">Du kan använda din egna synkroniseringsserver eller den som är standard. Ändra inte detta om du inte är säker på vad du gör.</string>
     <string name="reader_control_ltr">Ergonomiska kontroller i läsläge</string>
@@ -720,14 +718,8 @@
     <string name="source">Källa</string>
     <string name="search_everywhere">Sök överallt</string>
     <string name="badges_in_lists">Märken i listor</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="rating_safe">Alla åldrar</string>
     <string name="rating_suggestive">Suggestiv</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
     <string name="backup_frequency">Säkerhetskopieringsintervall</string>
     <string name="backup_date_">Säkerhetskopieringsdatum: %s</string>
     <string name="last_read">Senast läst</string>

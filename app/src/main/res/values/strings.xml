@@ -357,17 +357,23 @@
     <string name="enable_logging">Enable logging</string>
     <string name="enable_logging_summary">Record some actions for debug purposes. Don\'t turn it on if you\'re not sure what you\'re doing</string>
     <string name="show_suspicious_content">Show suspicious content</string>
-    <string name="theme_name_dynamic">Dynamic</string>
-    <string name="theme_name_expressive">Expressive (Test)</string>
     <string name="color_theme">Color scheme</string>
     <string name="show_in_grid_view">Show in grid view</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
+    <string name="theme_name_night_mode" translatable="false">Night Mode</string>
+    <string name="theme_name_forest_green" translatable="false">Forest Green</string>
+    <string name="theme_name_lavender_dream" translatable="false">Lavender Dream</string>
+    <string name="theme_name_midnight_oled" translatable="false">Midnight OLED</string>
+    <string name="theme_name_parchment" translatable="false">Parchment</string>
+    <string name="theme_name_monochrome" translatable="false">Monochrome</string>
+    <string name="theme_name_ocean_blue" translatable="false">Ocean Blue</string>
+    <string name="theme_name_warm_sunset" translatable="false">Warm Sunset</string>
+    <string name="theme_name_nordic_night" translatable="false">Nordic Night</string>
+    <string name="theme_name_peach_blossom" translatable="false">Peach Blossom</string>
+    <string name="theme_name_dark_coffee" translatable="false">Dark Coffee</string>
+    <string name="theme_name_matcha_paper" translatable="false">Matcha Paper</string>
+    <string name="theme_name_ink_stone" translatable="false">Ink Stone</string>
+    <string name="theme_name_blueprint_day" translatable="false">Blueprint Day</string>
+    <string name="theme_name_ember_night" translatable="false">Ember Night</string>
     <string name="nothing_here">There is nothing here</string>
     <string name="scrobbling_empty_hint">To track reading progress, select Menu → Track on the manga details screen.</string>
     <string name="services">Services</string>
@@ -875,8 +881,6 @@
     <string name="share_backup">Share backup</string>
     <string name="reader_multitask">Open reader in a separate task</string>
     <string name="reader_multitask_summary">Allows you to keep multiple readers with different manga open at the same time</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="book_effect">Yellowish background (blue filter)</string>
     <string name="local_storage_cleanup">Local storage cleanup</string>
     <string name="packup_creation_failed">Failed to create backup</string>

@@ -339,17 +339,9 @@
     <string name="share_logs">分享日志</string>
     <string name="enable_logging_summary">出于调试目的记录一些操作，若不知道有何用处请不要自行开启</string>
     <string name="show_suspicious_content">显示可疑内容</string>
-    <string name="theme_name_dynamic">动态</string>
     <string name="color_theme">配色主题</string>
     <string name="show_in_grid_view">网格视图</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_sakura">Sakura</string>
     <string name="services">服务</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="nothing_here">一片荒漠</string>
     <string name="scrobbling_empty_hint">要记录阅读进度，在漫画详情页里选择【菜单】→【进度记录】。</string>
     <string name="allow_unstable_updates">允许更新至测试版本</string>
@@ -820,7 +812,6 @@
     <string name="expand">展开</string>
     <string name="adblock">屏蔽广告</string>
     <string name="adblock_summary">屏蔽内置浏览器内显示的广告 (实验性)</string>
-    <string name="theme_name_expressive">印象 (实验性)</string>
     <string name="collapse_long_description">折叠过长简介</string>
     <string name="changelog_summary">最近已发布版本的更新日志</string>
     <string name="changelog">更新日志</string>
@@ -828,8 +819,6 @@
     <string name="creating_backup">创建备份中</string>
     <string name="reader_multitask">以独立窗口打开阅读器</string>
     <string name="reader_multitask_summary">允许阅读不同漫画时打开多个同时共存的阅读器</string>
-    <string name="theme_name_itsuka">Itsuka</string>
-    <string name="theme_name_totoro">Totoro</string>
     <string name="main_screen">主页</string>
     <string name="main_screen_fab">显示浮动继续阅读按钮</string>
     <string name="main_screen_fab_summary">一键续读。这个按钮不会在无痕模式或没有阅读历史时出现</string>

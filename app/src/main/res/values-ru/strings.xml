@@ -339,17 +339,9 @@
     <string name="enable_logging">Включить логирование</string>
     <string name="enable_logging_summary">Записывать некоторые действия для отладки. Включайте только если знаете, что делаете</string>
     <string name="show_suspicious_content">Отображать сомнительный контент</string>
-    <string name="theme_name_dynamic">Динамическая</string>
     <string name="color_theme">Цветовая схема</string>
     <string name="show_in_grid_view">Показать в виде сетки</string>
-    <string name="theme_name_miku">Мику</string>
-    <string name="theme_name_asuka">Аска</string>
-    <string name="theme_name_mion">Мион</string>
-    <string name="theme_name_rikka">Рикка</string>
-    <string name="theme_name_sakura">Сакура</string>
     <string name="services">Службы</string>
-    <string name="theme_name_mamimi">Мамими</string>
-    <string name="theme_name_kanade">Канадэ</string>
     <string name="scrobbling_empty_hint">Чтобы отслеживать прогресс чтения, выберите «Меню» → «Отслеживать» на экране сведений о манге.</string>
     <string name="nothing_here">Здесь ничего нет</string>
     <string name="download_started">Загрузка началась</string>
@@ -817,7 +809,6 @@
     <string name="pick_custom_file">Выбрать пользовательский файл</string>
     <string name="page_switch_timer">Страница будет меняться каждые ~%d секунд</string>
     <string name="expand">Расширять</string>
-    <string name="theme_name_expressive">Выразительный (Тест)</string>
     <string name="additional_action_required">Требуются дополнительные действия</string>
     <string name="hide_from_main_screen">Скрыть с главного экрана</string>
     <string name="collapse_long_description">Свернуть длинное описание</string>
@@ -830,8 +821,6 @@
     <string name="creating_backup">Создание резервной копии</string>
     <string name="share_backup">Поделиться резервной копией</string>
     <string name="reader_multitask">Открывать читалку как отдельную задачу</string>
-    <string name="theme_name_itsuka">Ицука</string>
-    <string name="theme_name_totoro">Тоторо</string>
     <string name="book_effect">Желтоватый фон (фильтр синего)</string>
     <string name="reader_navigation_inverted_summary">Поменять местами направление кнопки регулировки громкости и аппаратной клавиши навигации (влево/вверх/вниз/вправо)</string>
     <string name="reader_multitask_summary">Позволяет держать открытыми несколько читалок с разной мангой одновременно</string>

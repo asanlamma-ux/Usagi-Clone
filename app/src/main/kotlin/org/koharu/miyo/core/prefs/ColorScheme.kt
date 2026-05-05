@@ -3,7 +3,6 @@ package org.koharu.miyo.core.prefs
 import androidx.annotation.Keep
 import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
-import com.google.android.material.color.DynamicColors
 import org.koharu.miyo.R
 import org.koitharu.kotatsu.parsers.util.find
 
@@ -13,35 +12,30 @@ enum class ColorScheme(
 	@StringRes val titleResId: Int,
 ) {
 
-	DEFAULT(R.style.ThemeOverlay_Miyo_Totoro, R.string.theme_name_totoro),
-	MONET(R.style.ThemeOverlay_Miyo_Monet, R.string.theme_name_dynamic),
-	EXPRESSIVE(R.style.ThemeOverlay_Miyo_Expressive, R.string.theme_name_expressive),
-	MIKU(R.style.ThemeOverlay_Miyo_Miku, R.string.theme_name_miku),
-	RENA(R.style.ThemeOverlay_Miyo_Asuka, R.string.theme_name_asuka),
-	FROG(R.style.ThemeOverlay_Miyo_Mion, R.string.theme_name_mion),
-	BLUEBERRY(R.style.ThemeOverlay_Miyo_Rikka, R.string.theme_name_rikka),
-	SAKURA(R.style.ThemeOverlay_Miyo_Sakura, R.string.theme_name_sakura),
-	MAMIMI(R.style.ThemeOverlay_Miyo_Mamimi, R.string.theme_name_mamimi),
-	KANADE(R.style.ThemeOverlay_Miyo_Kanade, R.string.theme_name_kanade),
-	ITSUKA(R.style.ThemeOverlay_Miyo_Itsuka, R.string.theme_name_itsuka),
+	NIGHT_MODE(R.style.ThemeOverlay_Miyo_NightMode, R.string.theme_name_night_mode),
+	FOREST_GREEN(R.style.ThemeOverlay_Miyo_ForestGreen, R.string.theme_name_forest_green),
+	LAVENDER_DREAM(R.style.ThemeOverlay_Miyo_LavenderDream, R.string.theme_name_lavender_dream),
+	MIDNIGHT_OLED(R.style.ThemeOverlay_Miyo_MidnightOled, R.string.theme_name_midnight_oled),
+	PARCHMENT(R.style.ThemeOverlay_Miyo_Parchment, R.string.theme_name_parchment),
+	MONOCHROME(R.style.ThemeOverlay_Miyo_Monochrome, R.string.theme_name_monochrome),
+	OCEAN_BLUE(R.style.ThemeOverlay_Miyo_OceanBlue, R.string.theme_name_ocean_blue),
+	WARM_SUNSET(R.style.ThemeOverlay_Miyo_WarmSunset, R.string.theme_name_warm_sunset),
+	NORDIC_NIGHT(R.style.ThemeOverlay_Miyo_NordicNight, R.string.theme_name_nordic_night),
+	PEACH_BLOSSOM(R.style.ThemeOverlay_Miyo_PeachBlossom, R.string.theme_name_peach_blossom),
+	DARK_COFFEE(R.style.ThemeOverlay_Miyo_DarkCoffee, R.string.theme_name_dark_coffee),
+	MATCHA_PAPER(R.style.ThemeOverlay_Miyo_MatchaPaper, R.string.theme_name_matcha_paper),
+	INK_STONE(R.style.ThemeOverlay_Miyo_InkStone, R.string.theme_name_ink_stone),
+	BLUEPRINT_DAY(R.style.ThemeOverlay_Miyo_BlueprintDay, R.string.theme_name_blueprint_day),
+	EMBER_NIGHT(R.style.ThemeOverlay_Miyo_EmberNight, R.string.theme_name_ember_night),
 	;
 
 	companion object {
 
 		val default: ColorScheme
-			get() = if (DynamicColors.isDynamicColorAvailable()) {
-				MONET
-			} else {
-				DEFAULT
-			}
+			get() = OCEAN_BLUE
 
 		fun getAvailableList(): List<ColorScheme> {
-			val list = ColorScheme.entries.toMutableList()
-			if (!DynamicColors.isDynamicColorAvailable()) {
-				list.remove(MONET)
-				list.remove(EXPRESSIVE)
-			}
-			return list
+			return ColorScheme.entries
 		}
 
 		fun safeValueOf(name: String): ColorScheme? {

@@ -331,13 +331,10 @@
     <string name="network_unavailable_hint">Wi-Fiまたはモバイルネットワークをオンにして、オンラインでマンガを読むことができます</string>
     <string name="webtoon_zoom">Webtoonズーム</string>
     <string name="compact">コンパクト</string>
-    <string name="theme_name_mamimi">マミミ</string>
-    <string name="theme_name_kanade">奏</string>
     <string name="nothing_here">ここには何もありません</string>
     <string name="scrobbling_empty_hint">読書の進捗状況を確認するには、マンガの詳細画面で「メニュー」→「追跡」を選択します。</string>
     <string name="services">サービス</string>
     <string name="enable_logging_summary">デバッグ目的でいくつかのアクションを記録します。 何をしているのか分からない場合はオンにしないでください</string>
-    <string name="theme_name_miku">ミク</string>
     <string name="user_agent">ユーザー エージェント ヘッダー</string>
     <string name="prefetch_content">コンテンツのプリロード</string>
     <string name="share_logs">ログを共有</string>
@@ -349,13 +346,8 @@
     <string name="mark_as_current">現在としてマーク</string>
     <string name="enable_logging">ログ記録を有効にする</string>
     <string name="show_suspicious_content">疑わしいコンテンツを表示する</string>
-    <string name="theme_name_dynamic">ダイナミック</string>
     <string name="color_theme">配色</string>
     <string name="show_in_grid_view">グリッドビューで表示</string>
-    <string name="theme_name_asuka">アスカ</string>
-    <string name="theme_name_mion">ミオン</string>
-    <string name="theme_name_rikka">リッカ</string>
-    <string name="theme_name_sakura">さくら</string>
     <string name="settings_apply_restart_required">この変更を適用するには、アプリケーションを再起動してください</string>
     <string name="sources_reorder_tip">項目をタップ＆ホールドして並び替えをすることができます</string>
     <string name="comics_archive_import_description">.cbzまたは.zipファイルを1つ以上選択することができ、各ファイルは別のマンガとして認識されます。</string>
@@ -743,8 +735,6 @@
     <string name="share_backup">バックアップを共有する</string>
     <string name="reader_multitask">別のタスクでリーダーを開く</string>
     <string name="reader_multitask_summary">複数の異なる漫画を開いたまま、複数のリーダーを同時に保持できます</string>
-    <string name="theme_name_itsuka">トピックス</string>
-    <string name="theme_name_totoro">トトロ</string>
     <string name="book_effect">黄色がかった背景(青いフィルター)</string>
     <string name="local_storage_cleanup">ローカルストレージのクリーンアップ</string>
     <string name="packup_creation_failed">バックアップの作成に失敗しました</string>
@@ -771,7 +761,6 @@
     <string name="chapters_grid_view">グリッドビュー</string>
     <string name="enter_name">名前を入力してください</string>
     <string name="nsfw_16">16歳以上</string>
-    <string name="theme_name_expressive">エクスプレス(テスト)</string>
     <string name="pull_to_prev_chapter">前の章を開く</string>
     <string name="pull_to_next_chapter">次の章を開く</string>
     <string name="state_abandoned">ドロップ</string>

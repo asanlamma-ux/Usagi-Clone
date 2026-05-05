@@ -284,7 +284,6 @@
     <string name="invalid_domain_message">Ugyldig daomene</string>
     <string name="share_logs">Del loggføring</string>
     <string name="color_theme">Fargedrakt</string>
-    <string name="theme_name_dynamic">Dynamisk</string>
     <string name="language">Språk</string>
     <string name="enable_logging">Skru på loggføring</string>
     <string name="storage_usage">Lagringsbruk</string>

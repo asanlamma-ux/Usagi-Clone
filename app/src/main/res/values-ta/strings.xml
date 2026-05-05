@@ -147,12 +147,6 @@
     <string name="compact">கச்சிதமான</string>
     <string name="source_disabled">மூல முடக்கப்பட்டது</string>
     <string name="show_suspicious_content">சந்தேகத்திற்கிடமான உள்ளடக்கத்தைக் காட்டு</string>
-    <string name="theme_name_dynamic">மாறும்</string>
-    <string name="theme_name_miku">மிகு</string>
-    <string name="theme_name_asuka">அசுகா</string>
-    <string name="theme_name_sakura">சகுரா</string>
-    <string name="theme_name_mamimi">புன்னகை</string>
-    <string name="theme_name_kanade">கனடா</string>
     <string name="services">சேவைகள்</string>
     <string name="user_agent">USERAGENT தலைப்பு</string>
     <string name="settings_apply_restart_required">இந்த மாற்றங்களைப் பயன்படுத்த விண்ணப்பத்தை மறுதொடக்கம் செய்யுங்கள்</string>
@@ -428,8 +422,6 @@
     <string name="enable_logging_summary">பிழைத்திருத்த நோக்கங்களுக்காக சில செயல்களைப் பதிவுசெய்க. நீங்கள் என்ன செய்கிறீர்கள் என்று உங்களுக்குத் தெரியாவிட்டால் அதை இயக்க வேண்டாம்</string>
     <string name="color_theme">வண்ணத் திட்டம்</string>
     <string name="show_in_grid_view">கட்டம் பார்வையில் காண்பி</string>
-    <string name="theme_name_mion">விவரம்</string>
-    <string name="theme_name_rikka">பணக்காரர்</string>
     <string name="nothing_here">இங்கே எதுவும் இல்லை</string>
     <string name="download_option_next_unread_n_chapters">அடுத்து படிக்காத %s</string>
     <string name="content_type_other">மற்றொன்று</string>
@@ -793,7 +785,6 @@
     <string name="search_everywhere">எல்லா இடங்களிலும் தேடுங்கள்</string>
     <string name="error_disclaimer_report">நீங்கள் டெவலப்பர்களிடம் பிழை அறிக்கையைச் சமர்ப்பிக்கலாம். இது சிக்கலை ஆராய்ந்து சரிசெய்ய எங்களுக்கு உதவும்.</string>
     <string name="nsfw_16">16+</string>
-    <string name="theme_name_expressive">வெளிப்படையான (சோதனை)</string>
     <string name="reader_navigation_inverted">வழிசெலுத்தல் கட்டுப்பாடுகள் தலைகீழ்</string>
     <string name="reader_navigation_inverted_summary">தொகுதி பொத்தான் மற்றும் திசை வன்பொருள் விசை வழிசெலுத்தலின் திசையை மாற்றவும் (இடது/மேல்/கீழ்/வலது)</string>
     <string name="exclude_nsfw_from_suggestions_summary">அகவை வந்த மங்கா பரிந்துரைகளில் காட்டப்படாது. இந்த விருப்பம் சில ஆதாரங்களுடன் தவறானது</string>
@@ -824,8 +815,6 @@
     <string name="share_backup">காப்புப்பிரதியைப் பகிரவும்</string>
     <string name="reader_multitask">ஒரு தனி பணியில் வாசகரைத் திறக்கவும்</string>
     <string name="reader_multitask_summary">ஒரே நேரத்தில் வெவ்வேறு மங்காவுடன் பல வாசகர்களை திறந்து வைக்க உங்களை அனுமதிக்கிறது</string>
-    <string name="theme_name_itsuka">5 நாட்கள்</string>
-    <string name="theme_name_totoro">டுடோரோ</string>
     <string name="book_effect">மஞ்சள் நிற பின்னணி (நீல வடிகட்டி)</string>
     <string name="local_storage_cleanup">உள்ளக சேமிப்பக தூய்மைப்படுத்தல்</string>
     <string name="packup_creation_failed">காப்புப்பிரதியை உருவாக்கத் தவறிவிட்டது</string>

@@ -192,7 +192,6 @@
     <string name="prefetch_content">內容預先載入</string>
     <string name="mark_as_current">標記目前</string>
     <string name="enable_logging">啟動登入</string>
-    <string name="theme_name_sakura">Sakura</string>
     <string name="got_it">知道了</string>
     <string name="settings_apply_restart_required">請重新啟動此應用程式以應用這些變更</string>
     <string name="sources_reorder_tip">點擊並按住一個項目以重新排序它們</string>
@@ -296,9 +295,6 @@
     <string name="network_unavailable">網路不可用</string>
     <string name="network_unavailable_hint">開啟 Wi-Fi 或行動網路以閱讀線上漫畫</string>
     <string name="server_error">伺服器端錯誤 (%1$d)。請稍後重試</string>
-    <string name="theme_name_rikka">Rikka</string>
-    <string name="theme_name_mamimi">Mamimi</string>
-    <string name="theme_name_kanade">Kanade</string>
     <string name="sync_auth_hint">您可登錄已有帳號或建立一個新帳號</string>
     <string name="mirror_switching_summary">如果鏡像可用，在漫畫來源發生錯誤時自動切換網域</string>
     <string name="suggestions_notifications_summary">偶爾顯示推薦漫畫通知</string>
@@ -373,11 +369,7 @@
     <string name="no_access_to_file">您沒有權限存取此檔案或資料夾</string>
     <string name="local_manga_directories">本機漫畫目錄</string>
     <string name="authorization_optional">授權 (可選)</string>
-    <string name="theme_name_dynamic">動態</string>
     <string name="color_theme">顏色方案</string>
-    <string name="theme_name_miku">Miku</string>
-    <string name="theme_name_asuka">Asuka</string>
-    <string name="theme_name_mion">Mion</string>
     <string name="pause">暫停</string>
     <string name="downloads_wifi_only">只通過 Wi-Fi 下載</string>
     <string name="downloads_wifi_only_summary">切換到行動網路時停止下載</string>
