@@ -3,14 +3,11 @@ package org.koharu.miyo.browser.cloudflare
 import android.graphics.Bitmap
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import org.koharu.miyo.browser.BrowserClient
 import org.koharu.miyo.core.network.cookies.MutableCookieJar
 import org.koharu.miyo.core.network.webview.CaptchaNavigationGuard
 import org.koharu.miyo.core.network.webview.adblock.AdBlock
 import org.koitharu.kotatsu.parsers.network.CloudFlareHelper
-
-private const val LOOP_COUNTER = 5
 
 class CloudFlareClient(
 	private val cookieJar: MutableCookieJar,
@@ -20,12 +17,10 @@ class CloudFlareClient(
 ) : BrowserClient(callback, adBlock) {
 
 	private val oldClearance = getClearance()
-	private val targetHost = targetUrl.toHttpUrlOrNull()?.host
-	private var counter = 0
 
 	override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
 		super.onPageStarted(view, url, favicon)
-		checkClearance(url, acceptExistingClearance = false)
+		checkClearance()
 	}
 
 	override fun onPageCommitVisible(view: WebView, url: String) {
@@ -36,11 +31,7 @@ class CloudFlareClient(
 	override fun onPageFinished(webView: WebView, url: String) {
 		super.onPageFinished(webView, url)
 		callback.onPageLoaded()
-		checkClearance(url, acceptExistingClearance = true)
-	}
-
-	fun reset() {
-		counter = 0
+		checkClearance()
 	}
 
 	@Deprecated("Deprecated in Java")
@@ -61,40 +52,12 @@ class CloudFlareClient(
 		return super.shouldOverrideUrlLoading(view, request)
 	}
 
-	private fun checkClearance(url: String?, acceptExistingClearance: Boolean) {
+	private fun checkClearance() {
 		val clearance = getClearance()
-		if (clearance != null && (clearance != oldClearance || acceptExistingClearance && url.isTargetNavigation())) {
+		if (clearance != null && clearance != oldClearance) {
 			callback.onCheckPassed()
-		} else if (url.isChallengeNavigation()) {
-			counter++
-			if (counter >= LOOP_COUNTER) {
-				reset()
-				callback.onLoopDetected()
-			}
 		}
 	}
 
 	private fun getClearance() = CloudFlareHelper.getClearanceCookie(cookieJar, targetUrl)
-
-	private fun String?.isTargetNavigation(): Boolean {
-		val host = this?.toHttpUrlOrNull()?.host ?: return false
-		val target = targetHost ?: return true
-		return host.equals(target, ignoreCase = true) || host.endsWith(".$target", ignoreCase = true)
-	}
-
-	private fun String?.isChallengeNavigation(): Boolean {
-		val value = this ?: return false
-		val url = value.toHttpUrlOrNull() ?: return false
-		if (!url.host.isTargetNavigationHost()) {
-			return false
-		}
-		return value.contains("/cdn-cgi/", ignoreCase = true) ||
-			value.contains("__cf_chl", ignoreCase = true) ||
-			value.contains("cf_chl", ignoreCase = true)
-	}
-
-	private fun String.isTargetNavigationHost(): Boolean {
-		val target = targetHost ?: return true
-		return equals(target, ignoreCase = true) || endsWith(".$target", ignoreCase = true)
-	}
 }

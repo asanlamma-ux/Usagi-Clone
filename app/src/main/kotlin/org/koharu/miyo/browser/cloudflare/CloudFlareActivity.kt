@@ -44,8 +44,6 @@ class CloudFlareActivity : BaseBrowserActivity(), CloudFlareCallback {
 	@Inject
 	lateinit var captchaHandler: CaptchaHandler
 
-	private lateinit var cfClient: CloudFlareClient
-
 	override fun onCreate2(savedInstanceState: Bundle?, source: MangaSource, repository: ParserMangaRepository?) {
 		setDisplayHomeAsUp(isEnabled = true, showUpAsClose = true)
 		val url = intent?.dataString
@@ -53,8 +51,7 @@ class CloudFlareActivity : BaseBrowserActivity(), CloudFlareCallback {
 			finishAfterTransition()
 			return
 		}
-		cfClient = CloudFlareClient(cookieJar, this, adBlock, url)
-		viewBinding.webView.webViewClient = cfClient
+		viewBinding.webView.webViewClient = CloudFlareClient(cookieJar, this, adBlock, url)
 		lifecycleScope.launch {
 			try {
 				proxyProvider.applyWebViewConfig()
@@ -104,10 +101,6 @@ class CloudFlareActivity : BaseBrowserActivity(), CloudFlareCallback {
 		viewBinding.progressBar.isInvisible = true
 	}
 
-	override fun onLoopDetected() {
-		restartCheck()
-	}
-
 	override fun onCheckPassed() {
 		pendingResult = RESULT_OK
 		lifecycleScope.launch {
@@ -132,7 +125,6 @@ class CloudFlareActivity : BaseBrowserActivity(), CloudFlareCallback {
 		lifecycleScope.launch {
 			viewBinding.webView.stopLoading()
 			yield()
-			cfClient.reset()
 			val targetUrl = intent?.dataString?.toHttpUrlOrNull()
 			if (targetUrl != null) {
 				clearCfCookies(targetUrl)
